@@ -1,0 +1,243 @@
+/* CSS custom properties */
+.goodButtonWrapper {
+  --section-time: 0.8s;
+  --icon-color: rgb(227, 37, 76);
+  --inner-circle-color: rgb(199, 45, 95);
+  --outer-circle-color: rgb(204, 143, 246);
+  --inner-circle-size: 16px;
+  --outer-circle-size: 24px;
+}
+.animationChecked {
+  color: var(--icon-color);
+  animation-duration: var(--section-time);
+  animation-name: heart-bounce;
+}
+.animationUnChecked {
+  color: rgb(170, 184, 195);
+}
+@keyframes heart-bounce {
+  0% {
+    transform: scale(0.2);
+  }
+  10% {
+    transform: scale(0.2);
+  }
+  30% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+}
+
+/* Circle */
+.innerCircle {
+  position: absolute;
+  z-index: 2;
+  background-color: var(--inner-circle-color);
+  height: var(--inner-circle-size);
+  width: var(--inner-circle-size);
+  border-radius: 50%;
+  opacity: 0;
+  animation-duration: var(--section-time);
+  animation-name: inner-circle;
+}
+.outerCircle {
+  position: absolute;
+  z-index: 1;
+  border: 5px solid var(--outer-circle-color);
+  height: var(--outer-circle-size);
+  width: var(--outer-circle-size);
+  border-radius: 50%;
+  opacity: 0;
+  animation-duration: var(--section-time);
+  animation-name: outer-circle;
+}
+@keyframes inner-circle {
+  0% {
+    opacity: 1;
+    transform: scale(0.2);
+    background-color: var(--inner-circle-color);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  60% {
+    opacity: 0;
+    transform: scale(2);
+    background-color: white;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+    background-color: white;
+  }
+}
+@keyframes outer-circle {
+  /* border-widthはanimationできない */
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  21% {
+    opacity: 1;
+    transform: scale(0.2);
+  }
+  80% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* fireworks */
+.fireWorksPrimary {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation-duration: var(--section-time);
+  animation-name: fireworks-primary;
+}
+.fireWorksPrimarySphere {
+  position: absolute;
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fireWorksPrimarySphere:nth-of-type(1) {
+  background-color: rgb(200, 224, 255);
+  transform: rotate(calc(360deg / 7 * 0)) translateY(-20px);
+}
+.fireWorksPrimarySphere:nth-of-type(2) {
+  background-color: rgb(224, 195, 246);
+  transform: rotate(calc(360deg / 7 * 1)) translateY(-20px);
+}
+.fireWorksPrimarySphere:nth-of-type(3) {
+  background-color: rgb(190, 242, 221);
+  transform: rotate(calc(360deg / 7 * 2)) translateY(-20px);
+}
+.fireWorksPrimarySphere:nth-of-type(4) {
+  background-color: rgb(249, 193, 206);
+  transform: rotate(calc(360deg / 7 * 3)) translateY(-20px);
+}
+.fireWorksPrimarySphere:nth-of-type(5) {
+  background-color: rgb(194, 231, 255);
+  transform: rotate(calc(360deg / 7 * 4)) translateY(-20px);
+}
+.fireWorksPrimarySphere:nth-of-type(6) {
+  background-color: rgb(224, 195, 246);
+  transform: rotate(calc(360deg / 7 * 5)) translateY(-20px);
+}
+.fireWorksPrimarySphere:nth-of-type(7) {
+  background-color: rgb(190, 242, 221);
+  transform: rotate(calc(360deg / 7 * 6)) translateY(-20px);
+}
+.fireWorksSecondary {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation-duration: var(--section-time);
+  animation-name: fireworks-secondary;
+}
+.fireWorksSecondarySphere {
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fireWorksSecondarySphere:nth-of-type(1) {
+  background-color: rgb(200, 224, 255);
+  transform: rotate(calc(10deg + 360deg / 7 * 0)) translateY(-20px);
+}
+.fireWorksSecondarySphere:nth-of-type(2) {
+  background-color: rgb(224, 195, 246);
+  transform: rotate(calc(10deg + 360deg / 7 * 1)) translateY(-20px);
+}
+.fireWorksSecondarySphere:nth-of-type(3) {
+  background-color: rgb(190, 242, 221);
+  transform: rotate(calc(10deg + 360deg / 7 * 2)) translateY(-20px);
+}
+.fireWorksSecondarySphere:nth-of-type(4) {
+  background-color: rgb(249, 193, 206);
+  transform: rotate(calc(10deg + 360deg / 7 * 3)) translateY(-20px);
+}
+.fireWorksSecondarySphere:nth-of-type(5) {
+  background-color: rgb(194, 231, 255);
+  transform: rotate(calc(10deg + 360deg / 7 * 4)) translateY(-20px);
+}
+.fireWorksSecondarySphere:nth-of-type(6) {
+  background-color: rgb(224, 195, 246);
+  transform: rotate(calc(10deg + 360deg / 7 * 5)) translateY(-20px);
+}
+.fireWorksSecondarySphere:nth-of-type(7) {
+  background-color: rgb(190, 242, 221);
+  transform: rotate(calc(10deg + 360deg / 7 * 6)) translateY(-20px);
+}
+@keyframes fireworks-primary {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 1;
+    transform: rotate(0deg) scale(0.8);
+  }
+  90% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fireworks-secondary {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  90% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+  }
+}
