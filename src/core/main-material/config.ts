@@ -1,9 +1,9 @@
-import { MultiLanguageText } from "../language";
+import { MultiLanguageText } from '../language';
 import {
   MainMaterialCategoryType,
-  MainMaterialType,
   MainMaterialPerformanceStandardValue,
-} from "./type";
+  MainMaterialType,
+} from './type';
 
 // TODO: check on game
 export const MainMaterialsMap: {
@@ -14,9 +14,12 @@ export const MainMaterialsMap: {
 }[] = [
   // Metal
   {
-    categoryType: "Metal",
-    type: "MenosBronze",
-    name: { en: "MenosBronze", ja: "" },
+    categoryType: 'Metal',
+    type: 'MenosBronze',
+    name: {
+      en: 'MenosBronze',
+      ja: '',
+    },
     standardValue: {
       sharp: 10,
       heavy: 10,
@@ -29,9 +32,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "ForsenaIron",
-    name: { en: "ForsenaIron", ja: "" },
+    categoryType: 'Metal',
+    type: 'ForsenaIron',
+    name: {
+      en: 'ForsenaIron',
+      ja: '',
+    },
     standardValue: {
       sharp: 15,
       heavy: 15,
@@ -44,9 +50,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "GranzSteel",
-    name: { en: "GranzSteel", ja: "" },
+    categoryType: 'Metal',
+    type: 'GranzSteel',
+    name: {
+      en: 'GranzSteel',
+      ja: '',
+    },
     standardValue: {
       sharp: 20,
       heavy: 20,
@@ -59,9 +68,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "Mythril Silver",
-    name: { en: "Mythril", ja: "" },
+    categoryType: 'Metal',
+    type: 'Mythril Silver',
+    name: {
+      en: 'Mythril',
+      ja: '',
+    },
     standardValue: {
       sharp: 25,
       heavy: 25,
@@ -74,9 +86,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "Astoria Silver",
-    name: { en: "Astoria", ja: "" },
+    categoryType: 'Metal',
+    type: 'Astoria Silver',
+    name: {
+      en: 'Astoria',
+      ja: '',
+    },
     standardValue: {
       sharp: 30,
       heavy: 30,
@@ -89,9 +104,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "VizelGold",
-    name: { en: "VizelGold", ja: "" },
+    categoryType: 'Metal',
+    type: 'VizelGold',
+    name: {
+      en: 'VizelGold',
+      ja: '',
+    },
     standardValue: {
       sharp: 35,
       heavy: 35,
@@ -104,9 +122,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "IshePlatinum",
-    name: { en: "IshePlatinum", ja: "" },
+    categoryType: 'Metal',
+    type: 'IshePlatinum',
+    name: {
+      en: 'IshePlatinum',
+      ja: '',
+    },
     standardValue: {
       sharp: 40,
       heavy: 40,
@@ -119,9 +140,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "LorimarIron",
-    name: { en: "LorimarIron", ja: "" },
+    categoryType: 'Metal',
+    type: 'LorimarIron',
+    name: {
+      en: 'LorimarIron',
+      ja: '',
+    },
     standardValue: {
       sharp: 45,
       heavy: 45,
@@ -134,9 +158,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "AltenaAlloy",
-    name: { en: "AltenaAlloy", ja: "" },
+    categoryType: 'Metal',
+    type: 'AltenaAlloy',
+    name: {
+      en: 'AltenaAlloy',
+      ja: '',
+    },
     standardValue: {
       sharp: 50,
       heavy: 50,
@@ -149,9 +176,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "MaiaLead",
-    name: { en: "MaiaLead", ja: "" },
+    categoryType: 'Metal',
+    type: 'MaiaLead',
+    name: {
+      en: 'MaiaLead',
+      ja: '',
+    },
     standardValue: {
       sharp: 36,
       heavy: 3,
@@ -164,9 +194,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Metal",
-    type: "Orihalcon",
-    name: { en: "Orihalcon", ja: "" },
+    categoryType: 'Metal',
+    type: 'Orihalcon',
+    name: {
+      en: 'Orihalcon',
+      ja: '',
+    },
     standardValue: {
       sharp: 28,
       heavy: 28,
@@ -180,9 +213,12 @@ export const MainMaterialsMap: {
   },
   // Wood
   {
-    categoryType: "Wood",
-    type: "OakWood",
-    name: { en: "OakWood", ja: "" },
+    categoryType: 'Wood',
+    type: 'OakWood',
+    name: {
+      en: 'OakWood',
+      ja: '',
+    },
     standardValue: {
       sharp: 10,
       heavy: 6,
@@ -195,9 +231,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Wood",
-    type: "HollyWood",
-    name: { en: "HollyWood", ja: "" },
+    categoryType: 'Wood',
+    type: 'HollyWood',
+    name: {
+      en: 'HollyWood',
+      ja: '',
+    },
     standardValue: {
       sharp: 15,
       heavy: 9,
@@ -210,9 +249,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Wood",
-    type: "BaobabWood",
-    name: { en: "BaobabWood", ja: "" },
+    categoryType: 'Wood',
+    type: 'BaobabWood',
+    name: {
+      en: 'BaobabWood',
+      ja: '',
+    },
     standardValue: {
       sharp: 20,
       heavy: 12,
@@ -225,9 +267,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Wood",
-    type: "EbonyWood",
-    name: { en: "EbonyWood", ja: "" },
+    categoryType: 'Wood',
+    type: 'EbonyWood',
+    name: {
+      en: 'EbonyWood',
+      ja: '',
+    },
     standardValue: {
       sharp: 25,
       heavy: 15,
@@ -240,9 +285,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Wood",
-    type: "Ashe Wood",
-    name: { en: "Ashe", ja: "" },
+    categoryType: 'Wood',
+    type: 'Ashe Wood',
+    name: {
+      en: 'Ashe',
+      ja: '',
+    },
     standardValue: {
       sharp: 35,
       heavy: 21,
@@ -255,9 +303,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Wood",
-    type: "DiorWood",
-    name: { en: "DiorWood", ja: "" },
+    categoryType: 'Wood',
+    type: 'DiorWood',
+    name: {
+      en: 'DiorWood',
+      ja: '',
+    },
     standardValue: {
       sharp: 50,
       heavy: 30,
@@ -270,9 +321,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Wood",
-    type: "Mistletoe Wood",
-    name: { en: "Mistletoe", ja: "" },
+    categoryType: 'Wood',
+    type: 'Mistletoe Wood',
+    name: {
+      en: 'Mistletoe',
+      ja: '',
+    },
     standardValue: {
       sharp: 30,
       heavy: 18,
@@ -285,9 +339,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Wood",
-    type: "FossilWood",
-    name: { en: "FossilWood", ja: "" },
+    categoryType: 'Wood',
+    type: 'FossilWood',
+    name: {
+      en: 'FossilWood',
+      ja: '',
+    },
     standardValue: {
       sharp: 40,
       heavy: 24,
@@ -301,9 +358,12 @@ export const MainMaterialsMap: {
   },
   // Stone
   {
-    categoryType: "Stone",
-    type: "Marble",
-    name: { en: "Marble", ja: "" },
+    categoryType: 'Stone',
+    type: 'Marble',
+    name: {
+      en: 'Marble',
+      ja: '',
+    },
     standardValue: {
       sharp: 12,
       heavy: 2,
@@ -316,9 +376,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Stone",
-    type: "Obsidian",
-    name: { en: "Obsidian", ja: "" },
+    categoryType: 'Stone',
+    type: 'Obsidian',
+    name: {
+      en: 'Obsidian',
+      ja: '',
+    },
     standardValue: {
       sharp: 24,
       heavy: 4,
@@ -331,9 +394,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Stone",
-    type: "PedanStone",
-    name: { en: "PedanStone", ja: "" },
+    categoryType: 'Stone',
+    type: 'PedanStone',
+    name: {
+      en: 'PedanStone',
+      ja: '',
+    },
     standardValue: {
       sharp: 36,
       heavy: 7,
@@ -346,9 +412,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Stone",
+    categoryType: 'Stone',
     type: "Gaeus'sTears",
-    name: { en: "Gaeus", ja: "" },
+    name: {
+      en: 'Gaeus',
+      ja: '',
+    },
     standardValue: {
       sharp: 48,
       heavy: 9,
@@ -362,9 +431,12 @@ export const MainMaterialsMap: {
   },
   // Hide
   {
-    categoryType: "Hide",
-    type: "AnimalHide",
-    name: { en: "AnimalHide", ja: "" },
+    categoryType: 'Hide',
+    type: 'AnimalHide',
+    name: {
+      en: 'AnimalHide',
+      ja: '',
+    },
     standardValue: {
       sharp: 10,
       heavy: 1,
@@ -377,9 +449,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Hide",
-    type: "GatorSkin",
-    name: { en: "GatorSkin", ja: "" },
+    categoryType: 'Hide',
+    type: 'GatorSkin',
+    name: {
+      en: 'GatorSkin',
+      ja: '',
+    },
     standardValue: {
       sharp: 18,
       heavy: 1,
@@ -392,9 +467,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Hide",
-    type: "CentaurHide",
-    name: { en: "CentaurHide", ja: "" },
+    categoryType: 'Hide',
+    type: 'CentaurHide',
+    name: {
+      en: 'CentaurHide',
+      ja: '',
+    },
     standardValue: {
       sharp: 26,
       heavy: 1,
@@ -407,9 +485,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Hide",
-    type: "DragonSkin",
-    name: { en: "DragonSkin", ja: "" },
+    categoryType: 'Hide',
+    type: 'DragonSkin',
+    name: {
+      en: 'DragonSkin',
+      ja: '',
+    },
     standardValue: {
       sharp: 35,
       heavy: 1,
@@ -423,9 +504,12 @@ export const MainMaterialsMap: {
   },
   // Scales
   {
-    categoryType: "Scales",
-    type: "FishScales",
-    name: { en: "FishScales", ja: "" },
+    categoryType: 'Scales',
+    type: 'FishScales',
+    name: {
+      en: 'FishScales',
+      ja: '',
+    },
     standardValue: {
       sharp: 8,
       heavy: 8,
@@ -438,9 +522,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Scales",
-    type: "LizardScales",
-    name: { en: "LizardScales", ja: "" },
+    categoryType: 'Scales',
+    type: 'LizardScales',
+    name: {
+      en: 'LizardScales',
+      ja: '',
+    },
     standardValue: {
       sharp: 16,
       heavy: 17,
@@ -453,9 +540,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Scales",
-    type: "SnakeScales",
-    name: { en: "SnakeScales", ja: "" },
+    categoryType: 'Scales',
+    type: 'SnakeScales',
+    name: {
+      en: 'SnakeScales',
+      ja: '',
+    },
     standardValue: {
       sharp: 24,
       heavy: 26,
@@ -468,9 +558,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Scales",
-    type: "DragonScales",
-    name: { en: "DragonScales", ja: "" },
+    categoryType: 'Scales',
+    type: 'DragonScales',
+    name: {
+      en: 'DragonScales',
+      ja: '',
+    },
     standardValue: {
       sharp: 60,
       heavy: 66,
@@ -484,9 +577,12 @@ export const MainMaterialsMap: {
   },
   // Bone
   {
-    categoryType: "Bone",
-    type: "AnimalBone",
-    name: { en: "AnimalBone", ja: "" },
+    categoryType: 'Bone',
+    type: 'AnimalBone',
+    name: {
+      en: 'AnimalBone',
+      ja: '',
+    },
     standardValue: {
       sharp: 14,
       heavy: 10,
@@ -499,9 +595,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Bone",
-    type: "Ivory",
-    name: { en: "Ivory", ja: "" },
+    categoryType: 'Bone',
+    type: 'Ivory',
+    name: {
+      en: 'Ivory',
+      ja: '',
+    },
     standardValue: {
       sharp: 28,
       heavy: 21,
@@ -514,9 +613,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Bone",
-    type: "CursedBone",
-    name: { en: "CursedBone", ja: "" },
+    categoryType: 'Bone',
+    type: 'CursedBone',
+    name: {
+      en: 'CursedBone',
+      ja: '',
+    },
     standardValue: {
       sharp: 43,
       heavy: 32,
@@ -529,9 +631,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Bone",
-    type: "Fossil",
-    name: { en: "Fossil", ja: "" },
+    categoryType: 'Bone',
+    type: 'Fossil',
+    name: {
+      en: 'Fossil',
+      ja: '',
+    },
     standardValue: {
       sharp: 57,
       heavy: 43,
@@ -545,9 +650,12 @@ export const MainMaterialsMap: {
   },
   // Fabric
   {
-    categoryType: "Fabric",
-    type: "ToppleCotton",
-    name: { en: "ToppleCotton", ja: "" },
+    categoryType: 'Fabric',
+    type: 'ToppleCotton',
+    name: {
+      en: 'ToppleCotton',
+      ja: '',
+    },
     standardValue: {
       sharp: 18,
       heavy: 1,
@@ -560,9 +668,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Fabric",
+    categoryType: 'Fabric',
     type: "Sultan'sSilk",
-    name: { en: "Sultan", ja: "" },
+    name: {
+      en: 'Sultan',
+      ja: '',
+    },
     standardValue: {
       sharp: 28,
       heavy: 1,
@@ -575,9 +686,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Fabric",
-    type: "JuddHemp",
-    name: { en: "JuddHemp", ja: "" },
+    categoryType: 'Fabric',
+    type: 'JuddHemp',
+    name: {
+      en: 'JuddHemp',
+      ja: '',
+    },
     standardValue: {
       sharp: 38,
       heavy: 1,
@@ -590,9 +704,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Fabric",
-    type: "AltenaFelt",
-    name: { en: "AltenaFelt", ja: "" },
+    categoryType: 'Fabric',
+    type: 'AltenaFelt',
+    name: {
+      en: 'AltenaFelt',
+      ja: '',
+    },
     standardValue: {
       sharp: 48,
       heavy: 1,
@@ -606,9 +723,12 @@ export const MainMaterialsMap: {
   },
   // Aerolite
   {
-    categoryType: "Aerolite",
-    type: "JacobiniRock",
-    name: { en: "JacobiniRock", ja: "" },
+    categoryType: 'Aerolite',
+    type: 'JacobiniRock',
+    name: {
+      en: 'JacobiniRock',
+      ja: '',
+    },
     standardValue: {
       sharp: 15,
       heavy: 11,
@@ -621,9 +741,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Aerolite",
-    type: "HalleyRock",
-    name: { en: "HalleyRock", ja: "" },
+    categoryType: 'Aerolite',
+    type: 'HalleyRock',
+    name: {
+      en: 'HalleyRock',
+      ja: '',
+    },
     standardValue: {
       sharp: 20,
       heavy: 15,
@@ -636,9 +759,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Aerolite",
-    type: "AnkhRock",
-    name: { en: "AnkhRock", ja: "" },
+    categoryType: 'Aerolite',
+    type: 'AnkhRock',
+    name: {
+      en: 'AnkhRock',
+      ja: '',
+    },
     standardValue: {
       sharp: 25,
       heavy: 18,
@@ -651,9 +777,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Aerolite",
-    type: "VinekRock",
-    name: { en: "VinekRock", ja: "" },
+    categoryType: 'Aerolite',
+    type: 'VinekRock',
+    name: {
+      en: 'VinekRock',
+      ja: '',
+    },
     standardValue: {
       sharp: 30,
       heavy: 22,
@@ -666,9 +795,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Aerolite",
-    type: "TuttleRock",
-    name: { en: "TuttleRock", ja: "" },
+    categoryType: 'Aerolite',
+    type: 'TuttleRock',
+    name: {
+      en: 'TuttleRock',
+      ja: '',
+    },
     standardValue: {
       sharp: 35,
       heavy: 26,
@@ -681,9 +813,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Aerolite",
-    type: "NemesisRock",
-    name: { en: "NemesisRock", ja: "" },
+    categoryType: 'Aerolite',
+    type: 'NemesisRock',
+    name: {
+      en: 'NemesisRock',
+      ja: '',
+    },
     standardValue: {
       sharp: 40,
       heavy: 30,
@@ -696,9 +831,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Aerolite",
-    type: "BiellaRock",
-    name: { en: "BiellaRock", ja: "" },
+    categoryType: 'Aerolite',
+    type: 'BiellaRock',
+    name: {
+      en: 'BiellaRock',
+      ja: '',
+    },
     standardValue: {
       sharp: 45,
       heavy: 33,
@@ -711,9 +849,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Aerolite",
-    type: "SwifteRock",
-    name: { en: "SwifteRock", ja: "" },
+    categoryType: 'Aerolite',
+    type: 'SwifteRock',
+    name: {
+      en: 'SwifteRock',
+      ja: '',
+    },
     standardValue: {
       sharp: 50,
       heavy: 37,
@@ -727,9 +868,12 @@ export const MainMaterialsMap: {
   },
   // Miscellaneous
   {
-    categoryType: "Miscellaneous",
-    type: "Adamantite",
-    name: { en: "Adamantite", ja: "" },
+    categoryType: 'Miscellaneous',
+    type: 'Adamantite',
+    name: {
+      en: 'Adamantite',
+      ja: '',
+    },
     standardValue: {
       sharp: 62,
       heavy: 46,
@@ -742,9 +886,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Miscellaneous",
-    type: "Fullmetal",
-    name: { en: "Fullmetal", ja: "" },
+    categoryType: 'Miscellaneous',
+    type: 'Fullmetal',
+    name: {
+      en: 'Fullmetal',
+      ja: '',
+    },
     standardValue: {
       sharp: 55,
       heavy: 41,
@@ -757,9 +904,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Miscellaneous",
-    type: "Coral",
-    name: { en: "Coral", ja: "" },
+    categoryType: 'Miscellaneous',
+    type: 'Coral',
+    name: {
+      en: 'Coral',
+      ja: '',
+    },
     standardValue: {
       sharp: 18,
       heavy: 21,
@@ -772,9 +922,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Miscellaneous",
-    type: "TortoiseShell",
-    name: { en: "TortoiseShell", ja: "" },
+    categoryType: 'Miscellaneous',
+    type: 'TortoiseShell',
+    name: {
+      en: 'TortoiseShell',
+      ja: '',
+    },
     standardValue: {
       sharp: 26,
       heavy: 31,
@@ -787,9 +940,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Miscellaneous",
-    type: "Shell",
-    name: { en: "Shell", ja: "" },
+    categoryType: 'Miscellaneous',
+    type: 'Shell',
+    name: {
+      en: 'Shell',
+      ja: '',
+    },
     standardValue: {
       sharp: 20,
       heavy: 24,
@@ -802,9 +958,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Miscellaneous",
-    type: "Emerald",
-    name: { en: "Emerald", ja: "" },
+    categoryType: 'Miscellaneous',
+    type: 'Emerald',
+    name: {
+      en: 'Emerald',
+      ja: '',
+    },
     standardValue: {
       sharp: 2,
       heavy: 2,
@@ -817,9 +976,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Miscellaneous",
-    type: "Pearl",
-    name: { en: "Pearl", ja: "" },
+    categoryType: 'Miscellaneous',
+    type: 'Pearl',
+    name: {
+      en: 'Pearl',
+      ja: '',
+    },
     standardValue: {
       sharp: 2,
       heavy: 2,
@@ -832,9 +994,12 @@ export const MainMaterialsMap: {
     },
   },
   {
-    categoryType: "Miscellaneous",
-    type: "LapisLazuli",
-    name: { en: "LapisLazuli", ja: "" },
+    categoryType: 'Miscellaneous',
+    type: 'LapisLazuli',
+    name: {
+      en: 'LapisLazuli',
+      ja: '',
+    },
     standardValue: {
       sharp: 2,
       heavy: 2,
