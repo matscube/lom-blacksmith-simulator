@@ -5,40 +5,34 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/shadcn/ui/select";
-import { calcAttack } from "@/core/main-material";
-import { MainMaterialType, MainMaterialTypes } from "@/core/main-material/type";
-import { WeaponType, WeaponTypes } from "@/core/weapon";
-import clsx from "clsx";
-import { useState } from "react";
+} from '@/components/shadcn/ui/select';
+import { calcAttack } from '@/core/main-material';
+import { MainMaterialType, MainMaterialTypes } from '@/core/main-material/type';
+import { WeaponType, WeaponTypes } from '@/core/weapon';
+import clsx from 'clsx';
+import { useState } from 'react';
 
-export function FormMainMaterialSelect() {
+export function FormMainMaterialSelect(props: { className?: string }) {
   const mainMaterials = MainMaterialTypes;
   const weaponTypes = WeaponTypes;
-  const [materialType, setMaterialType] = useState<
-    MainMaterialType | undefined
-  >(undefined);
-  const [weaponType, setWeaponType] = useState<WeaponType | undefined>(
-    undefined
-  );
+  const [materialType, setMaterialType] = useState<MainMaterialType | undefined>(undefined);
+  const [weaponType, setWeaponType] = useState<WeaponType | undefined>(undefined);
   const attackValue =
     materialType !== undefined && weaponType !== undefined
       ? calcAttack({ mainMaterialType: materialType, weaponType: weaponType })
       : 0;
   return (
-    <div
-      className={clsx("w-full px-2 py-4 flex flex-wrap justify-start gap-x-4")}
-    >
-      <div className="w-full flex flex-col gap-y-2">
-        <span className="text-lg">Attack: {attackValue}</span>
+    <div className={clsx(props.className, 'w-full flex flex-wrap justify-start gap-x-4')}>
+      <div className='w-full flex flex-col gap-y-2'>
+        <span className='text-lg'>Attack: {attackValue}</span>
       </div>
       {/* MainMaterial */}
       <Select
         value={materialType}
         onValueChange={(value: MainMaterialType) => setMaterialType(value)}
       >
-        <SelectTrigger className="w-[280px]">
-          <SelectValue placeholder="Select a Main Material" />
+        <SelectTrigger className='w-[280px]'>
+          <SelectValue placeholder='Select a Main Material' />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
@@ -48,12 +42,9 @@ export function FormMainMaterialSelect() {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Select
-        value={weaponType}
-        onValueChange={(value: WeaponType) => setWeaponType(value)}
-      >
-        <SelectTrigger className="w-[280px]">
-          <SelectValue placeholder="Select a Weapon Type" />
+      <Select value={weaponType} onValueChange={(value: WeaponType) => setWeaponType(value)}>
+        <SelectTrigger className='w-[280px]'>
+          <SelectValue placeholder='Select a Weapon Type' />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
