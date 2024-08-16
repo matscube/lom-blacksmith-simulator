@@ -53,60 +53,61 @@ describe('calcAttack', () => {
   });
 
   it('for all Wood materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'OakWood', weaponType: 'Knife' })).toBe(23);
-    // expect(calcAttack({ mainMaterialType: 'HollyWood', weaponType: 'Knife' })).toBe(25);
-    // expect(calcAttack({ mainMaterialType: 'BaobabWood', weaponType: 'Knife' })).toBe(26);
-    // expect(calcAttack({ mainMaterialType: 'EbonyWood', weaponType: 'Knife' })).toBe(28);
-    // expect(calcAttack({ mainMaterialType: 'Ashe Wood', weaponType: 'Knife' })).toBe(29);
-    // expect(calcAttack({ mainMaterialType: 'DiorWood', weaponType: 'Knife' })).toBe(35);
-    // expect(calcAttack({ mainMaterialType: 'Mistletoe Wood', weaponType: 'Knife' })).toBe(31);
-    // expect(calcAttack({ mainMaterialType: 'FossilWood', weaponType: 'Knife' })).toBe(32);
+    expect(calcAttack({ mainMaterialType: 'OakWood', weaponType: 'Knife' })).toBe(7);
+    expect(calcAttack({ mainMaterialType: 'HollyWood', weaponType: 'Knife' })).toBe(10);
+    expect(calcAttack({ mainMaterialType: 'BaobabWood', weaponType: 'Knife' })).toBe(14);
+    expect(calcAttack({ mainMaterialType: 'EbonyWood', weaponType: 'Knife' })).toBe(17);
+    expect(calcAttack({ mainMaterialType: 'Ashe Wood', weaponType: 'Knife' })).toBe(24);
+    expect(calcAttack({ mainMaterialType: 'DiorWood', weaponType: 'Knife' })).toBe(35);
+    expect(calcAttack({ mainMaterialType: 'Mistletoe Wood', weaponType: 'Knife' })).toBe(21);
+    expect(calcAttack({ mainMaterialType: 'FossilWood', weaponType: 'Knife' })).toBe(28);
   });
 
   it('for all Stone materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'Marble', weaponType: 'Knife' })).toBe(31);
-    // expect(calcAttack({ mainMaterialType: 'Obsidian', weaponType: 'Knife' })).toBe(33);
-    // expect(calcAttack({ mainMaterialType: 'PedanStone', weaponType: 'Knife' })).toBe(34);
-    // expect(calcAttack({ mainMaterialType: "Gaeus'sTears", weaponType: 'Knife' })).toBe(36);
+    expect(calcAttack({ mainMaterialType: 'Marble', weaponType: 'Knife' })).toBe(12);
+    expect(calcAttack({ mainMaterialType: 'Obsidian', weaponType: 'Knife' })).toBe(25);
+    expect(calcAttack({ mainMaterialType: 'PedanStone', weaponType: 'Knife' })).toBe(38);
+    expect(calcAttack({ mainMaterialType: "Gaeus'sTears", weaponType: 'Knife' })).toBe(50);
   });
 
   it('for all Hide materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'AnimalHide', weaponType: 'Knife' })).toBe(20);
-    // expect(calcAttack({ mainMaterialType: 'GatorSkin', weaponType: 'Knife' })).toBe(22);
-    // expect(calcAttack({ mainMaterialType: 'CentaurHide', weaponType: 'Knife' })).toBe(23);
-    // expect(calcAttack({ mainMaterialType: 'DragonSkin', weaponType: 'Knife' })).toBe(25);
+    expect(calcAttack({ mainMaterialType: 'AnimalHide', weaponType: 'Knife' })).toBe(4);
+    expect(calcAttack({ mainMaterialType: 'GatorSkin', weaponType: 'Knife' })).toBe(6);
+    expect(calcAttack({ mainMaterialType: 'CentaurHide', weaponType: 'Knife' })).toBe(9);
+    expect(calcAttack({ mainMaterialType: 'DragonSkin', weaponType: 'Knife' })).toBe(12);
   });
 
   it('for all Scales materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'FishScales', weaponType: 'Knife' })).toBe(25);
-    // expect(calcAttack({ mainMaterialType: 'LizardScales', weaponType: 'Knife' })).toBe(27);
-    // expect(calcAttack({ mainMaterialType: 'SnakeScales', weaponType: 'Knife' })).toBe(28);
-    // expect(calcAttack({ mainMaterialType: 'DragonScales', weaponType: 'Knife' })).toBe(30);
+    expect(calcAttack({ mainMaterialType: 'FishScales', weaponType: 'Knife' })).toBe(7);
+    expect(calcAttack({ mainMaterialType: 'LizardScales', weaponType: 'Knife' })).toBe(14);
+    expect(calcAttack({ mainMaterialType: 'SnakeScales', weaponType: 'Knife' })).toBe(21);
+    expect(calcAttack({ mainMaterialType: 'DragonScales', weaponType: 'Knife' })).toBe(54);
   });
 
   it('for all Bone materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'AnimalBone', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'Ivory', weaponType: 'Knife' })).toBe(17);
-    // expect(calcAttack({ mainMaterialType: 'CursedBone', weaponType: 'Knife' })).toBe(18);
-    // expect(calcAttack({ mainMaterialType: 'Fossil', weaponType: 'Knife' })).toBe(20);
+    expect(calcAttack({ mainMaterialType: 'AnimalBone', weaponType: 'Knife' })).toBe(11);
+    expect(calcAttack({ mainMaterialType: 'Ivory', weaponType: 'Knife' })).toBe(23);
+    expect(calcAttack({ mainMaterialType: 'CursedBone', weaponType: 'Knife' })).toBe(35);
+    expect(calcAttack({ mainMaterialType: 'Fossil', weaponType: 'Knife' })).toBe(47);
   });
 
   it('for all Fabric materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'ToppleCotton', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: "Sultan'sSilk", weaponType: 'Knife' })).toBe(17);
-    // expect(calcAttack({ mainMaterialType: 'JuddHemp', weaponType: 'Knife' })).toBe(18);
-    // expect(calcAttack({ mainMaterialType: 'AltenaFelt', weaponType: 'Knife' })).toBe(18);
+    expect(calcAttack({ mainMaterialType: 'ToppleCotton', weaponType: 'Knife' })).toBe(6);
+    expect(calcAttack({ mainMaterialType: "Sultan'sSilk", weaponType: 'Knife' })).toBe(10);
+    expect(calcAttack({ mainMaterialType: 'JuddHemp', weaponType: 'Knife' })).toBe(13);
+    expect(calcAttack({ mainMaterialType: 'AltenaFelt', weaponType: 'Knife' })).toBe(17);
   });
 
   it('for all Aerolite materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'JacobiniRock', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'HalleyRock', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'AnkhRock', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'VinekRock', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'TuttleRock', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'NemesisRock', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'BiellaRock', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'SwifteRock', weaponType: 'Knife' })).toBe(15);
+    // check English/remaster values
+    // expect(calcAttack({ mainMaterialType: 'JacobiniRock', weaponType: 'Knife' })).toBe(21);
+    // expect(calcAttack({ mainMaterialType: 'HalleyRock', weaponType: 'Knife' })).toBe(29);
+    // expect(calcAttack({ mainMaterialType: 'AnkhRock', weaponType: 'Knife' })).toBe(36);
+    // expect(calcAttack({ mainMaterialType: 'VinekRock', weaponType: 'Knife' })).toBe(44);
+    // expect(calcAttack({ mainMaterialType: 'TuttleRock', weaponType: 'Knife' })).toBe(51);
+    // expect(calcAttack({ mainMaterialType: 'NemesisRock', weaponType: 'Knife' })).toBe(58);
+    // expect(calcAttack({ mainMaterialType: 'BiellaRock', weaponType: 'Knife' })).toBe(66);
+    // expect(calcAttack({ mainMaterialType: 'SwifteRock', weaponType: 'Knife' })).toBe(73);
   });
 
   it('for all Miscellaneous materials', () => {
