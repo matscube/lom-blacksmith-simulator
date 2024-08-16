@@ -39,17 +39,17 @@ describe('calcAttack', () => {
   });
 
   it('for all Mineral materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'MenosBronze', weaponType: 'Knife' })).toBe(9);
-    // expect(calcAttack({ mainMaterialType: 'ForsenaIron', weaponType: 'Knife' })).toBe(14);
-    // expect(calcAttack({ mainMaterialType: 'GranzSteel', weaponType: 'Knife' })).toBe(18);
-    // expect(calcAttack({ mainMaterialType: 'Mythril Silver', weaponType: 'Knife' })).toBe(23);
-    // expect(calcAttack({ mainMaterialType: 'Astoria Silver', weaponType: 'Knife' })).toBe(28);
-    // expect(calcAttack({ mainMaterialType: 'VizelGold', weaponType: 'Knife' })).toBe(32);
-    // expect(calcAttack({ mainMaterialType: 'IshePlatinum', weaponType: 'Knife' })).toBe(37);
-    // expect(calcAttack({ mainMaterialType: 'LorimarIron', weaponType: 'Knife' })).toBe(42);
-    // expect(calcAttack({ mainMaterialType: 'AltenaAlloy', weaponType: 'Knife' })).toBe(46);
-    // expect(calcAttack({ mainMaterialType: 'MaiaLead', weaponType: 'Knife' })).toBe(25);
-    // expect(calcAttack({ mainMaterialType: 'Orihalcon', weaponType: 'Knife' })).toBe(26);
+    expect(calcAttack({ mainMaterialType: 'MenosBronze', weaponType: 'Knife' })).toBe(9);
+    expect(calcAttack({ mainMaterialType: 'ForsenaIron', weaponType: 'Knife' })).toBe(14);
+    expect(calcAttack({ mainMaterialType: 'GranzSteel', weaponType: 'Knife' })).toBe(18);
+    expect(calcAttack({ mainMaterialType: 'Mythril Silver', weaponType: 'Knife' })).toBe(23);
+    expect(calcAttack({ mainMaterialType: 'Astoria Silver', weaponType: 'Knife' })).toBe(28);
+    expect(calcAttack({ mainMaterialType: 'VizelGold', weaponType: 'Knife' })).toBe(32);
+    expect(calcAttack({ mainMaterialType: 'IshePlatinum', weaponType: 'Knife' })).toBe(37);
+    expect(calcAttack({ mainMaterialType: 'LorimarIron', weaponType: 'Knife' })).toBe(42);
+    expect(calcAttack({ mainMaterialType: 'AltenaAlloy', weaponType: 'Knife' })).toBe(46);
+    expect(calcAttack({ mainMaterialType: 'MaiaLead', weaponType: 'Knife' })).toBe(25);
+    expect(calcAttack({ mainMaterialType: 'Orihalcon', weaponType: 'Knife' })).toBe(26);
   });
 
   it('for all Wood materials', () => {
