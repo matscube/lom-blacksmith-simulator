@@ -99,15 +99,18 @@ describe('calcAttack', () => {
   });
 
   it('for all Aerolite materials', () => {
-    // check English/remaster values
-    // expect(calcAttack({ mainMaterialType: 'JacobiniRock', weaponType: 'Knife' })).toBe(21);
-    // expect(calcAttack({ mainMaterialType: 'HalleyRock', weaponType: 'Knife' })).toBe(29);
-    // expect(calcAttack({ mainMaterialType: 'AnkhRock', weaponType: 'Knife' })).toBe(36);
-    // expect(calcAttack({ mainMaterialType: 'VinekRock', weaponType: 'Knife' })).toBe(44);
-    // expect(calcAttack({ mainMaterialType: 'TuttleRock', weaponType: 'Knife' })).toBe(51);
-    // expect(calcAttack({ mainMaterialType: 'NemesisRock', weaponType: 'Knife' })).toBe(58);
-    // expect(calcAttack({ mainMaterialType: 'BiellaRock', weaponType: 'Knife' })).toBe(66);
-    // expect(calcAttack({ mainMaterialType: 'SwifteRock', weaponType: 'Knife' })).toBe(73);
+    /**
+     * 隕石主原料は武器作成直後から火属性が4ついているので、実際にこの攻撃力になることはない
+     * テスト上は火属性0の場合を想定して計算する
+     */
+    expect(calcAttack({ mainMaterialType: 'JacobiniRock', weaponType: 'Knife' })).toBe(17);
+    expect(calcAttack({ mainMaterialType: 'HalleyRock', weaponType: 'Knife' })).toBe(23);
+    expect(calcAttack({ mainMaterialType: 'AnkhRock', weaponType: 'Knife' })).toBe(29);
+    expect(calcAttack({ mainMaterialType: 'VinekRock', weaponType: 'Knife' })).toBe(35);
+    expect(calcAttack({ mainMaterialType: 'TuttleRock', weaponType: 'Knife' })).toBe(41);
+    expect(calcAttack({ mainMaterialType: 'NemesisRock', weaponType: 'Knife' })).toBe(47);
+    expect(calcAttack({ mainMaterialType: 'BiellaRock', weaponType: 'Knife' })).toBe(52);
+    expect(calcAttack({ mainMaterialType: 'SwifteRock', weaponType: 'Knife' })).toBe(58);
   });
 
   it('for all Miscellaneous materials', () => {
