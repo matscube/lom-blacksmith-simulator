@@ -1,3 +1,5 @@
+export * from './config';
+export * from './type';
 import { WeaponPerformanceStandardValueMap, WeaponType } from '../weapon';
 import { MainMaterialsMap } from './config';
 import { MainMaterialType } from './type';
