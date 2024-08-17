@@ -111,13 +111,13 @@ describe('calcAttack', () => {
   });
 
   it('for all Miscellaneous materials', () => {
-    // expect(calcAttack({ mainMaterialType: 'Adamantite', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'Fullmetal', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'Coral', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'TortoiseShell', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'Shell', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'Emerald', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'Pearl', weaponType: 'Knife' })).toBe(15);
-    // expect(calcAttack({ mainMaterialType: 'LapisLazuli', weaponType: 'Knife' })).toBe(15);
+    expect(calcAttack({ mainMaterialType: 'Adamantite', weaponType: 'Knife' })).toBe(72);
+    expect(calcAttack({ mainMaterialType: 'Fullmetal', weaponType: 'Knife' })).toBe(55);
+    expect(calcAttack({ mainMaterialType: 'Coral', weaponType: 'Knife' })).toBe(14);
+    expect(calcAttack({ mainMaterialType: 'TortoiseShell', weaponType: 'Knife' })).toBe(21);
+    expect(calcAttack({ mainMaterialType: 'Shell', weaponType: 'Knife' })).toBe(16);
+    expect(calcAttack({ mainMaterialType: 'Emerald', weaponType: 'Knife' })).toBe(1);
+    expect(calcAttack({ mainMaterialType: 'Pearl', weaponType: 'Knife' })).toBe(1);
+    expect(calcAttack({ mainMaterialType: 'LapisLazuli', weaponType: 'Knife' })).toBe(1);
   });
 });
