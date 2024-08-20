@@ -63,6 +63,35 @@ export const SubMaterialTypes = [
   `Pear o'Heels`, // ハイヒールペア
   'Dolphin Squash', // イルカキューリ
   'Citrisquid', // イカレモン
+  'Springanana', // バネバナナ
+  'Peach Puppy', // ドッグピーチ
+  'Apricat', // キャットアプリコット
+  'Applesocks', // サンタリンゴ
+  `Pine o'Clock`, // 時計パイン
+  'Fishy Fruit', // フィッシュフルーツ
+  'Boarmelon', // ウリぼうスイカ
+  'Rhinoloupe', // サイメロン
+  'Orcaplant', // シャチナス
+  'Garlicrown', // クラウンガーリック
+  'Honey Onion', // ハニーオニオン
+  'Sweet Moai', // スウィートモアイ
+  'Spiny Carrot', // ツノガイニンジン
+  'Conchurnip', // マキガイカブ
+  'Cornflower', // ひまわりとうもろこし
+  'Cabbadillo', // アルマジロキャベツ
+  'Needlettuce', // ハリネズミレタス
+  'Cherry Bombs', // ビーダマンベリー
+  'Masked Potato', // マスクイモ
+  'Lilipods', // ユリグリンピース
+  'Rocket Papaya', // ロケットパパイヤ
+  `Orange'opus`, // タコオレンジ
+  'Bumpkin', // パンプキンボム
+  'Heart Mint', // ハートミント
+  'Spade Basil', // スペードバジル
+  'Diamond Laurel', // ダイヤローレル
+  'Gold Clover', // ゴールドクローバー
+  'Mush-in-a-Box', // ドッキリマッシュ
+  'Toadstoolshed', // 小屋ダケ
   // Meat
   // Fangs&Claws
   // Eyes
