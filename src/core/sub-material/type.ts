@@ -93,6 +93,17 @@ export const SubMaterialTypes = [
   'Mush-in-a-Box', // ドッキリマッシュ
   'Toadstoolshed', // 小屋ダケ
   // Meat
+  'Animal Meat', // 獣肉
+  'Bug Meat', // 虫肉
+  'Lizard Meat', // トカゲの肉
+  'Fish Meat', // 魚肉
+  'Bird Meat', // 鳥肉
+  'Morph Meat', // 変な肉
+  'Demon Meat', // 悪魔の肉
+  'Dragon Steak', // ドラゴンステーキ
+  'Odd Meat', // 不思議な肉
+  'Magical Meat', // 魔法の肉
+  'Rotten Meat', // くさった肉
   // Fangs&Claws
   // Eyes
   // Feathers
