@@ -105,6 +105,13 @@ export const SubMaterialTypes = [
   'Magical Meat', // 魔法の肉
   'Rotten Meat', // くさった肉
   // Fangs&Claws
+  'Sharp Claw', // 鋭い爪
+  'Poison Fang', // 毒の牙
+  `Giant's Horn`, // 巨獣の角
+  'Scissors', // ハサミ
+  'Healing Claw', // いやしの爪
+  'Zombie Claw', // 死者の爪
+  'Vampire Fang', // 吸血牙
   // Eyes
   // Feathers
   // Bottles
