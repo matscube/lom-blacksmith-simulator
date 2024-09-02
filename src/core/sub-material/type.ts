@@ -113,6 +113,8 @@ export const SubMaterialTypes = [
   'Zombie Claw', // 死者の爪
   'Vampire Fang', // 吸血牙
   // Eyes
+  'Little Eye', // つぶらな瞳
+  'Sleepy Eye', // ねむたい瞳
   // Feathers
   // Bottles
   // Vials
