@@ -115,6 +115,12 @@ export const SubMaterialTypes = [
   // Eyes
   'Little Eye', // つぶらな瞳
   'Sleepy Eye', // ねむたい瞳
+  'Silly Eye', // とぼけた瞳
+  'Dangerous Eye', // あぶない瞳
+  'Angry Eye', // けわしい瞳
+  'Blank Eye', // うつろな瞳
+  'Creepy Eye', // あやしい瞳
+  'Wicked Eye', // よこしまな瞳
   // Feathers
   // Bottles
   // Vials
