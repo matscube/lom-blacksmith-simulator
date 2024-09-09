@@ -2,7 +2,7 @@
 * Essence marker
 * Weapon
 * Armor
-* forge / 鍛造する
+* forge / 鍛造する（作成する）
 * temper / 鍛える, 焼き戻す
 * tempering / 焼戻し
 * essence / 属性（全8属性）

@@ -1,5 +1,7 @@
 import console from 'console';
-import { MainMaterialType } from '../main-material';
+import { calcAttack, MainMaterialType } from '../main-material';
+import { SubMaterialType } from '../sub-material/type';
+import { WeaponType } from './type';
 
 export * from './config';
 export * from './type';
@@ -8,9 +10,19 @@ export class Weapon {
   essence: Essence = new Essence();
   constructor(
     private readonly mainMaterial: MainMaterialType,
-    private readonly weaponType: string,
+    private readonly weaponType: WeaponType,
   ) {
     console.log('Weapon created');
+  }
+
+  getAttack(): number {
+    return calcAttack({ mainMaterialType: this.mainMaterial, weaponType: this.weaponType });
+  }
+
+  history: SubMaterialType[] = [];
+  temper(type: SubMaterialType) {
+    this.history.push(type);
+    console.log('Weapon tempered');
   }
 
   debug() {
