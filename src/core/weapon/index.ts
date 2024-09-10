@@ -1,5 +1,7 @@
 import console from 'console';
 import { calcAttack, MainMaterialType } from '../main-material';
+import { ElementResist, getElementResist, getEnergyForElementLevel } from '../resist';
+import { SubMaterialsMap } from '../sub-material/config';
 import { SubMaterialType } from '../sub-material/type';
 import { WeaponType } from './type';
 
@@ -8,6 +10,8 @@ export * from './type';
 
 export class Weapon {
   essence: Essence = new Essence();
+  // TODO: change by main material
+  resist: ElementResist = getElementResist('MenosBronze');
   constructor(
     private readonly mainMaterial: MainMaterialType,
     private readonly weaponType: WeaponType,
@@ -23,6 +27,17 @@ export class Weapon {
   temper(type: SubMaterialType) {
     this.history.push(type);
     console.log('Weapon tempered');
+
+    const subMaterial = SubMaterialsMap.find((m) => m.type === type);
+    if (!subMaterial) throw new Error('SubMaterial not found');
+    let energy = subMaterial.energy || 0;
+    let element = subMaterial.elementType || 'salamander';
+    let currentLevel = this.essence[element];
+    let nextLevelEnergy = getEnergyForElementLevel(this.resist[element], currentLevel + 1);
+    if (energy >= nextLevelEnergy) {
+      energy -= nextLevelEnergy;
+      this.essence[element]++;
+    }
   }
 
   debug() {
@@ -31,16 +46,6 @@ export class Weapon {
     console.log('----------------');
   }
 }
-
-export type EssenceType =
-  | 'Wisp'
-  | 'Shade'
-  | 'Dryad'
-  | 'Aura'
-  | 'Salamander'
-  | 'Gnome'
-  | 'Jinn'
-  | 'Undine';
 export class Essence {
   wisp: number = 0;
   shade: number = 0;
