@@ -1,5 +1,6 @@
 import { ElementType } from '../element';
 import { MultiLanguageText } from '../language';
+import { MysticPowerType } from '../mystic-power';
 import { SubMaterialCategoryType, SubMaterialType } from './type';
 
 export const SubMaterialsMap: {
@@ -8,6 +9,7 @@ export const SubMaterialsMap: {
   name: MultiLanguageText;
   energy: number;
   elementType?: ElementType;
+  mysticPowerType?: MysticPowerType;
 }[] = [
   // Coins
   {
@@ -19,6 +21,7 @@ export const SubMaterialsMap: {
     },
     energy: 64,
     elementType: `salamander`,
+    mysticPowerType: `Salamander`,
   },
   {
     categoryType: `Coins`,
@@ -29,5 +32,6 @@ export const SubMaterialsMap: {
     },
     energy: 48,
     elementType: `salamander`,
+    mysticPowerType: `Salamander`,
   },
 ];
