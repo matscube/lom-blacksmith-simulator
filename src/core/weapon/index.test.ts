@@ -26,5 +26,8 @@ describe(`'Weapon's essence of`, () => {
     expect(w.essence.salamander).toEqual(3);
     w.temper("Salamander's Gold");
     expect(w.essence.salamander).toEqual(4);
+    // not enough energy
+    w.temper("Salamander's Gold");
+    expect(w.essence.salamander).toEqual(4);
   });
 });
