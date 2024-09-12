@@ -1,6 +1,6 @@
 import { SubMaterial } from './type';
 
-export const SubMaterialsMap: SubMaterial[] = [
+export const AllSubMaterials: SubMaterial[] = [
   /**
    * Coins
    */

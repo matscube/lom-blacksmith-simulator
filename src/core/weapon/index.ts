@@ -3,7 +3,7 @@ import { ElementType } from '../element';
 import { calcAttack, MainMaterialType } from '../main-material';
 import { MysticPowerType } from '../mystic-power';
 import { ElementResist, getElementResist, getEnergyForElementLevel } from '../resist';
-import { SubMaterialsMap } from '../sub-material/config';
+import { AllSubMaterials } from '../sub-material/config';
 import { SubMaterialType } from '../sub-material/type';
 import { WeaponType } from './type';
 
@@ -25,7 +25,7 @@ export class Weapon {
   temper(type: SubMaterialType) {
     this.history.push(type);
 
-    const subMaterial = SubMaterialsMap.find((m) => m.type === type);
+    const subMaterial = AllSubMaterials.find((m) => m.type === type);
     if (!subMaterial) throw new Error('SubMaterial not found');
 
     // pool sub material energy

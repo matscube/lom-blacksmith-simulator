@@ -137,7 +137,6 @@ export const SubMaterialTypes = [
 
 export type SubMaterialType = (typeof SubMaterialTypes)[number];
 
-// TODO: classにする
 export type SubMaterial = {
   categoryType: SubMaterialCategoryType;
   type: SubMaterialType;
