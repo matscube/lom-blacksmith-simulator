@@ -1,9 +1,11 @@
-export type ElementType =
-  | 'wisp'
-  | 'shade'
-  | 'dryad'
-  | 'aura'
-  | 'salamander'
-  | 'gnome'
-  | 'jinn'
-  | 'undine';
+export const AllElementTypes = [
+  'wisp',
+  'shade',
+  'dryad',
+  'aura',
+  'salamander',
+  'gnome',
+  'jinn',
+  'undine',
+] as const;
+export type ElementType = (typeof AllElementTypes)[number];

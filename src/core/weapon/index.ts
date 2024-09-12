@@ -90,6 +90,9 @@ export class Weapon {
       if (mysticPower === 'Salamander') {
         this.elementLevelUpPossibilityCountUp('salamander');
       }
+      if (mysticPower === 'Gnome') {
+        this.elementLevelUpPossibilityCountUp('gnome');
+      }
     }
   }
 
@@ -118,17 +121,27 @@ export class Weapon {
     return this.elementLevelUpPossibilityCount[type];
   }
   elementLevelUpProcess() {
-    const element: ElementType = 'salamander';
-    let count = this.elementLevelUpPossibilityCount[element];
-    while (count > 0) {
-      const currentLevel = this.essence[element];
-      const nextLevelEnergy = getEnergyForElementLevel(this.resist[element], currentLevel + 1);
-      if (this.energy >= nextLevelEnergy) {
-        this.useEnergy(nextLevelEnergy);
-        this.essence[element]++;
+    // 光と闇は専用フローになる
+    const elementTypesOrderedForProcessing: ElementType[] = [
+      'dryad',
+      'aura',
+      'salamander',
+      'gnome',
+      'jinn',
+      'undine',
+    ];
+    elementTypesOrderedForProcessing.forEach((element) => {
+      let count = this.elementLevelUpPossibilityCount[element];
+      while (count > 0) {
+        const currentLevel = this.essence[element];
+        const nextLevelEnergy = getEnergyForElementLevel(this.resist[element], currentLevel + 1);
+        if (this.energy >= nextLevelEnergy) {
+          this.useEnergy(nextLevelEnergy);
+          this.essence[element]++;
+        }
+        count--;
       }
-      count--;
-    }
+    });
   }
   elementLevelUpPossibilityReset() {
     this.elementLevelUpPossibilityCount = {
