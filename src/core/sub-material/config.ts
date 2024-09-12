@@ -1,16 +1,6 @@
-import { ElementType } from '../element';
-import { MultiLanguageText } from '../language';
-import { MysticPowerType } from '../mystic-power';
-import { SubMaterialCategoryType, SubMaterialType } from './type';
+import { SubMaterial } from './type';
 
-export const SubMaterialsMap: {
-  categoryType: SubMaterialCategoryType;
-  type: SubMaterialType;
-  name: MultiLanguageText;
-  energy: number;
-  elementType?: ElementType;
-  mysticPowerType?: MysticPowerType;
-}[] = [
+export const SubMaterialsMap: SubMaterial[] = [
   /**
    * Coins
    */

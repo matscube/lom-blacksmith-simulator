@@ -1,3 +1,7 @@
+import { ElementType } from '../element';
+import { MultiLanguageText } from '../language';
+import { MysticPowerType } from '../mystic-power';
+
 export const SubMaterialCategoryTypes = [
   'ManaStone',
   'ManaCrystal',
@@ -132,3 +136,13 @@ export const SubMaterialTypes = [
 ] as const;
 
 export type SubMaterialType = (typeof SubMaterialTypes)[number];
+
+// TODO: classにする
+export type SubMaterial = {
+  categoryType: SubMaterialCategoryType;
+  type: SubMaterialType;
+  name: MultiLanguageText;
+  energy: number;
+  elementType?: ElementType;
+  mysticPowerType?: MysticPowerType;
+};

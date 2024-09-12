@@ -30,12 +30,14 @@ export class Weapon {
 
     // pool sub material energy
     this.setSubMaterialEnergy(subMaterial.energy);
+    if (subMaterial.elementType !== undefined) {
+      this.preProcessElementLevelUp(subMaterial.elementType);
+    }
 
     // push mystic power
-    this.pushMysticPower(subMaterial.mysticPowerType);
-
-    // book sub-material element level-up
-    this.elementLevelUpPossibilityCountUp(subMaterial.elementType);
+    if (subMaterial.mysticPowerType !== undefined) {
+      this.pushMysticPower(subMaterial.mysticPowerType);
+    }
 
     // book mystic-power element level-up
     this.processActiveMysticPowers();
@@ -59,11 +61,12 @@ export class Weapon {
    * Mystic Power
    */
   mysticPowers: MysticPowerType[] = []; // array of 5 items
-  pushMysticPower(mysticPower?: MysticPowerType) {
-    if (mysticPower) {
-      this.mysticPowers.unshift(mysticPower);
-      this.mysticPowers = this.mysticPowers.slice(0, 5);
-    }
+  hasMysticPower(mysticPower?: MysticPowerType) {
+    return mysticPower;
+  }
+  pushMysticPower(mysticPower: MysticPowerType) {
+    this.mysticPowers.unshift(mysticPower);
+    this.mysticPowers = this.mysticPowers.slice(0, 5);
   }
   getMysticPowerBooked() {
     return this.mysticPowers[0];
@@ -87,11 +90,29 @@ export class Weapon {
   }
   processMysticPower(mysticPower?: MysticPowerType) {
     if (mysticPower) {
+      if (mysticPower === 'Wisp') {
+        this.preProcessElementLevelUp('wisp');
+      }
+      if (mysticPower === 'Shade') {
+        this.preProcessElementLevelUp('shade');
+      }
+      if (mysticPower === 'Aura') {
+        this.preProcessElementLevelUp('aura');
+      }
+      if (mysticPower === 'Dryad') {
+        this.preProcessElementLevelUp('dryad');
+      }
       if (mysticPower === 'Salamander') {
-        this.elementLevelUpPossibilityCountUp('salamander');
+        this.preProcessElementLevelUp('salamander');
       }
       if (mysticPower === 'Gnome') {
-        this.elementLevelUpPossibilityCountUp('gnome');
+        this.preProcessElementLevelUp('gnome');
+      }
+      if (mysticPower === 'Jinn') {
+        this.preProcessElementLevelUp('jinn');
+      }
+      if (mysticPower === 'Undine') {
+        this.preProcessElementLevelUp('undine');
       }
     }
   }
@@ -112,6 +133,25 @@ export class Weapon {
     jinn: 0,
     undine: 0,
   };
+  preProcessElementLevelUp(elementType: ElementType) {
+    switch (elementType) {
+      case 'wisp':
+      case 'shade':
+        this.levelUpElementIfPossible(elementType);
+        break;
+      case 'aura':
+      case 'dryad':
+        this.levelUpElementIfPossible(elementType);
+        break;
+      case 'salamander':
+      case 'gnome':
+      case 'jinn':
+      case 'undine':
+        // book sub-material element level-up
+        this.elementLevelUpPossibilityCountUp(elementType);
+        break;
+    }
+  }
   elementLevelUpPossibilityCountUp(type?: ElementType) {
     if (type) {
       this.elementLevelUpPossibilityCount[type]++;
@@ -133,15 +173,21 @@ export class Weapon {
     elementTypesOrderedForProcessing.forEach((element) => {
       let count = this.elementLevelUpPossibilityCount[element];
       while (count > 0) {
-        const currentLevel = this.essence[element];
-        const nextLevelEnergy = getEnergyForElementLevel(this.resist[element], currentLevel + 1);
-        if (this.energy >= nextLevelEnergy) {
-          this.useEnergy(nextLevelEnergy);
-          this.essence[element]++;
-        }
+        this.levelUpElementIfPossible(element);
         count--;
       }
     });
+  }
+  levelUpElementIfPossible(element: ElementType): boolean {
+    const currentLevel = this.essence[element];
+    const nextLevelEnergy = getEnergyForElementLevel(this.resist[element], currentLevel + 1);
+    if (this.energy >= nextLevelEnergy) {
+      this.useEnergy(nextLevelEnergy);
+      this.essence[element]++;
+      return true;
+    } else {
+      return false;
+    }
   }
   elementLevelUpPossibilityReset() {
     this.elementLevelUpPossibilityCount = {
