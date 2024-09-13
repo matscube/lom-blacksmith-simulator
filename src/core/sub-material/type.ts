@@ -128,9 +128,21 @@ export const SubMaterialTypes = [
   // Feathers
   // Bottles
   // Vials
+  'Mercury', // 水銀
+  'Stinky Breath', // 臭い息
+  `Ghost's Shriek`, // 絶望のさけび
+  'Dragon Breath', // 竜の息
+  `Virgin's Sigh`, // 乙女のため息
   // Urns
   // Pellets
   // Powders
+  'Sulpher', // イオウ
+  'Poison Powder', // 毒の粉
+  'Sleepy Powder', // ねむりのこな
+  'Paralysis Powder', // まひのこな
+  'Rust', // さび
+  'Graveyard Dirt', // 墓場の土
+  'Ash', // 灰
   // Pouches
   // Miscellaneous
 ] as const;
