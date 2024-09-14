@@ -10,7 +10,7 @@ describe('Weapon', () => {
   it('can be tempered to salamander:9', () => {
     const w = new Weapon('AltenaAlloy', 'Sword');
 
-    w.temper("Salamander's Silver");
+    w.temper('Salamander Silver');
     expect(w.essence.salamander).toEqual(1);
     // expect(w.getAttack()).toBe(52);
     // w.temper("Sulpher");

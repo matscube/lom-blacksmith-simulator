@@ -1,12 +1,29 @@
 import { SubMaterial } from '..';
 
+export type CoinType =
+  | `Wisp Gold`
+  | `Shade Gold`
+  | `Dryad Gold`
+  | `Aura Gold`
+  | `Salamander Gold`
+  | `Gnome Gold`
+  | `Jinn Gold`
+  | `Undine Gold`
+  | `Wisp Silver`
+  | `Shade Silver`
+  | `Dryad Silver`
+  | `Aura Silver`
+  | `Salamander Silver`
+  | `Gnome Silver`
+  | `Jinn Silver`
+  | `Undine Silver`;
 export const Coins: SubMaterial[] = [
   // Gold Coin
   {
-    categoryType: `Coins`,
-    type: `Wisp's Gold`,
+    categoryType: `Coin`,
+    type: `Wisp Gold`,
     name: {
-      en: `Wisp's Gold`,
+      en: `Wisp Gold`,
       ja: `ウィスプの金貨`,
     },
     energy: 64,
@@ -14,10 +31,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Wisp`,
   },
   {
-    categoryType: `Coins`,
-    type: `Shade's Gold`,
+    categoryType: `Coin`,
+    type: `Shade Gold`,
     name: {
-      en: `Shade's Gold`,
+      en: `Shade Gold`,
       ja: `シェイドの金貨`,
     },
     energy: 64,
@@ -25,10 +42,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Shade`,
   },
   {
-    categoryType: `Coins`,
-    type: `Dryad's Gold`,
+    categoryType: `Coin`,
+    type: `Dryad Gold`,
     name: {
-      en: `Dryad's Gold`,
+      en: `Dryad Gold`,
       ja: `ドリアードの金貨`,
     },
     energy: 64,
@@ -36,10 +53,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Dryad`,
   },
   {
-    categoryType: `Coins`,
-    type: `Aura's Gold`,
+    categoryType: `Coin`,
+    type: `Aura Gold`,
     name: {
-      en: `Aura's Gold`,
+      en: `Aura Gold`,
       ja: `アウラの金貨`,
     },
     energy: 64,
@@ -47,10 +64,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Aura`,
   },
   {
-    categoryType: `Coins`,
-    type: `Salamander's Gold`,
+    categoryType: `Coin`,
+    type: `Salamander Gold`,
     name: {
-      en: `Salamander's Gold`,
+      en: `Salamander Gold`,
       ja: `サラマンダーの金貨`,
     },
     energy: 64,
@@ -58,10 +75,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Salamander`,
   },
   {
-    categoryType: `Coins`,
-    type: `Gnome's Gold`,
+    categoryType: `Coin`,
+    type: `Gnome Gold`,
     name: {
-      en: `Gnome's Gold`,
+      en: `Gnome Gold`,
       ja: `ノームの金貨`,
     },
     energy: 64,
@@ -69,10 +86,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Gnome`,
   },
   {
-    categoryType: `Coins`,
-    type: `Jinn's Gold`,
+    categoryType: `Coin`,
+    type: `Jinn Gold`,
     name: {
-      en: `Jinn's Gold`,
+      en: `Jinn Gold`,
       ja: `ジンの金貨`,
     },
     energy: 64,
@@ -80,10 +97,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Jinn`,
   },
   {
-    categoryType: `Coins`,
-    type: `Undine's Gold`,
+    categoryType: `Coin`,
+    type: `Undine Gold`,
     name: {
-      en: `Undine's Gold`,
+      en: `Undine Gold`,
       ja: `ウンディーネの金貨`,
     },
     energy: 64,
@@ -92,10 +109,10 @@ export const Coins: SubMaterial[] = [
   },
   // Silver Coin
   {
-    categoryType: `Coins`,
-    type: `Wisp's Silver`,
+    categoryType: `Coin`,
+    type: `Wisp Silver`,
     name: {
-      en: `Wisp's Silver`,
+      en: `Wisp Silver`,
       ja: `ウィスプの銀貨`,
     },
     energy: 48,
@@ -103,10 +120,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Wisp`,
   },
   {
-    categoryType: `Coins`,
-    type: `Shade's Silver`,
+    categoryType: `Coin`,
+    type: `Shade Silver`,
     name: {
-      en: `Shade's Silver`,
+      en: `Shade Silver`,
       ja: `シェイドの銀貨`,
     },
     energy: 48,
@@ -114,10 +131,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Shade`,
   },
   {
-    categoryType: `Coins`,
-    type: `Dryad's Silver`,
+    categoryType: `Coin`,
+    type: `Dryad Silver`,
     name: {
-      en: `Dryad's Silver`,
+      en: `Dryad Silver`,
       ja: `ドリアードの銀貨`,
     },
     energy: 48,
@@ -125,10 +142,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Dryad`,
   },
   {
-    categoryType: `Coins`,
-    type: `Aura's Silver`,
+    categoryType: `Coin`,
+    type: `Aura Silver`,
     name: {
-      en: `Aura's Silver`,
+      en: `Aura Silver`,
       ja: `アウラの銀貨`,
     },
     energy: 48,
@@ -136,10 +153,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Aura`,
   },
   {
-    categoryType: `Coins`,
-    type: `Salamander's Silver`,
+    categoryType: `Coin`,
+    type: `Salamander Silver`,
     name: {
-      en: `Salamander's Silver`,
+      en: `Salamander Silver`,
       ja: `サラマンダーの銀貨`,
     },
     energy: 48,
@@ -147,10 +164,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Salamander`,
   },
   {
-    categoryType: `Coins`,
-    type: `Gnome's Silver`,
+    categoryType: `Coin`,
+    type: `Gnome Silver`,
     name: {
-      en: `Gnome's Silver`,
+      en: `Gnome Silver`,
       ja: `ノームの銀貨`,
     },
     energy: 48,
@@ -158,10 +175,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Gnome`,
   },
   {
-    categoryType: `Coins`,
-    type: `Jinn's Silver`,
+    categoryType: `Coin`,
+    type: `Jinn Silver`,
     name: {
-      en: `Jinn's Silver`,
+      en: `Jinn Silver`,
       ja: `ジンの銀貨`,
     },
     energy: 48,
@@ -169,10 +186,10 @@ export const Coins: SubMaterial[] = [
     mysticPowerType: `Jinn`,
   },
   {
-    categoryType: `Coins`,
-    type: `Undine's Silver`,
+    categoryType: `Coin`,
+    type: `Undine Silver`,
     name: {
-      en: `Undine's Silver`,
+      en: `Undine Silver`,
       ja: `ウンディーネの銀貨`,
     },
     energy: 48,
