@@ -9,6 +9,7 @@ import {
 export const MainMaterialsMap: {
   categoryType: MainMaterialCategoryType;
   type: MainMaterialType;
+  suppressionValue: number;
   name: MultiLanguageText;
   standardValue: MainMaterialPerformanceStandardValue;
 }[] = [
@@ -16,9 +17,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'MenosBronze',
+    suppressionValue: 18,
     name: {
       en: 'MenosBronze',
-      ja: '',
+      ja: 'メノス銅',
     },
     standardValue: {
       sharp: 10,
@@ -34,9 +36,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'ForsenaIron',
+    suppressionValue: 20,
     name: {
       en: 'ForsenaIron',
-      ja: '',
+      ja: 'フォルセナ鉄',
     },
     standardValue: {
       sharp: 15,
@@ -52,9 +55,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'GranzSteel',
+    suppressionValue: 24,
     name: {
       en: 'GranzSteel',
-      ja: '',
+      ja: 'グランス鋼鉄',
     },
     standardValue: {
       sharp: 20,
@@ -70,9 +74,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'Mythril Silver',
+    suppressionValue: 12,
     name: {
       en: 'Mythril',
-      ja: '',
+      ja: 'ミスリル銀',
     },
     standardValue: {
       sharp: 25,
@@ -88,9 +93,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'Astoria Silver',
+    suppressionValue: 16,
     name: {
       en: 'Astoria',
-      ja: '',
+      ja: 'アストリア銀',
     },
     standardValue: {
       sharp: 30,
@@ -106,9 +112,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'VizelGold',
+    suppressionValue: 16,
     name: {
       en: 'VizelGold',
-      ja: '',
+      ja: 'バイゼル金',
     },
     standardValue: {
       sharp: 35,
@@ -124,9 +131,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'IshePlatinum',
+    suppressionValue: 16,
     name: {
       en: 'IshePlatinum',
-      ja: '',
+      ja: 'イシュ白金',
     },
     standardValue: {
       sharp: 40,
@@ -142,9 +150,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'LorimarIron',
+    suppressionValue: 16,
     name: {
       en: 'LorimarIron',
-      ja: '',
+      ja: 'ロリマー聖鉄',
     },
     standardValue: {
       sharp: 45,
@@ -160,9 +169,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'AltenaAlloy',
+    suppressionValue: 18,
     name: {
       en: 'AltenaAlloy',
-      ja: '',
+      ja: 'アルテナ合金',
     },
     standardValue: {
       sharp: 50,
@@ -178,9 +188,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'MaiaLead',
+    suppressionValue: 48,
     name: {
       en: 'MaiaLead',
-      ja: '',
+      ja: 'マイア鉛',
     },
     standardValue: {
       sharp: 36,
@@ -196,9 +207,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Metal',
     type: 'Orihalcon',
+    suppressionValue: 12,
     name: {
       en: 'Orihalcon',
-      ja: '',
+      ja: 'オリハルコン',
     },
     standardValue: {
       sharp: 28,
@@ -215,9 +227,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Wood',
     type: 'OakWood',
+    suppressionValue: 16,
     name: {
       en: 'OakWood',
-      ja: '',
+      ja: 'かしの木',
     },
     standardValue: {
       sharp: 10,
@@ -233,9 +246,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Wood',
     type: 'HollyWood',
+    suppressionValue: 14,
     name: {
       en: 'HollyWood',
-      ja: '',
+      ja: 'ひいらぎの木',
     },
     standardValue: {
       sharp: 15,
@@ -251,9 +265,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Wood',
     type: 'BaobabWood',
+    suppressionValue: 24,
     name: {
       en: 'BaobabWood',
-      ja: '',
+      ja: 'バオバブの木',
     },
     standardValue: {
       sharp: 20,
@@ -269,9 +284,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Wood',
     type: 'EbonyWood',
+    suppressionValue: 24,
     name: {
       en: 'EbonyWood',
-      ja: '',
+      ja: '黒檀',
     },
     standardValue: {
       sharp: 25,
@@ -287,9 +303,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Wood',
     type: 'Ashe Wood',
+    suppressionValue: 12,
     name: {
       en: 'Ashe',
-      ja: '',
+      ja: 'トネリコの木',
     },
     standardValue: {
       sharp: 35,
@@ -305,9 +322,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Wood',
     type: 'DiorWood',
+    suppressionValue: 10,
     name: {
       en: 'DiorWood',
-      ja: '',
+      ja: 'ディオールの木',
     },
     standardValue: {
       sharp: 50,
@@ -323,9 +341,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Wood',
     type: 'Mistletoe Wood',
+    suppressionValue: 11,
     name: {
       en: 'Mistletoe',
-      ja: '',
+      ja: 'やどりぎ',
     },
     standardValue: {
       sharp: 30,
@@ -341,9 +360,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Wood',
     type: 'FossilWood',
+    suppressionValue: 22,
     name: {
       en: 'FossilWood',
-      ja: '',
+      ja: '化石樹',
     },
     standardValue: {
       sharp: 40,
@@ -360,9 +380,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Stone',
     type: 'Marble',
+    suppressionValue: 28,
     name: {
       en: 'Marble',
-      ja: '',
+      ja: '大理石',
     },
     standardValue: {
       sharp: 12,
@@ -378,9 +399,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Stone',
     type: 'Obsidian',
+    suppressionValue: 32,
     name: {
       en: 'Obsidian',
-      ja: '',
+      ja: '黒曜石',
     },
     standardValue: {
       sharp: 24,
@@ -396,9 +418,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Stone',
     type: 'PedanStone',
+    suppressionValue: 24,
     name: {
       en: 'PedanStone',
-      ja: '',
+      ja: 'ペダン石',
     },
     standardValue: {
       sharp: 36,
@@ -414,9 +437,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Stone',
     type: "Gaeus'sTears",
+    suppressionValue: 20,
     name: {
       en: 'Gaeus',
-      ja: '',
+      ja: 'ガイアの涙',
     },
     standardValue: {
       sharp: 48,
@@ -433,9 +457,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Hide',
     type: 'AnimalHide',
+    suppressionValue: 8,
     name: {
       en: 'AnimalHide',
-      ja: '',
+      ja: '獣の革',
     },
     standardValue: {
       sharp: 10,
@@ -451,9 +476,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Hide',
     type: 'GatorSkin',
+    suppressionValue: 12,
     name: {
       en: 'GatorSkin',
-      ja: '',
+      ja: 'ワニ革',
     },
     standardValue: {
       sharp: 18,
@@ -469,9 +495,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Hide',
     type: 'CentaurHide',
+    suppressionValue: 20,
     name: {
       en: 'CentaurHide',
-      ja: '',
+      ja: '鉄甲獣の革　※',
     },
     standardValue: {
       sharp: 26,
@@ -487,9 +514,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Hide',
     type: 'DragonSkin',
+    suppressionValue: 20,
     name: {
       en: 'DragonSkin',
-      ja: '',
+      ja: '飛竜の革',
     },
     standardValue: {
       sharp: 35,
@@ -506,9 +534,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Scales',
     type: 'FishScales',
+    suppressionValue: 20,
     name: {
       en: 'FishScales',
-      ja: '',
+      ja: '魚鱗',
     },
     standardValue: {
       sharp: 8,
@@ -524,9 +553,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Scales',
     type: 'LizardScales',
+    suppressionValue: 20,
     name: {
       en: 'LizardScales',
-      ja: '',
+      ja: 'トカゲの鱗',
     },
     standardValue: {
       sharp: 16,
@@ -542,9 +572,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Scales',
     type: 'SnakeScales',
+    suppressionValue: 20,
     name: {
       en: 'SnakeScales',
-      ja: '',
+      ja: 'ヘビの鱗',
     },
     standardValue: {
       sharp: 24,
@@ -560,9 +591,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Scales',
     type: 'DragonScales',
+    suppressionValue: 14,
     name: {
       en: 'DragonScales',
-      ja: '',
+      ja: '竜鱗',
     },
     standardValue: {
       sharp: 60,
@@ -579,9 +611,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Bone',
     type: 'AnimalBone',
+    suppressionValue: 20,
     name: {
       en: 'AnimalBone',
-      ja: '',
+      ja: '獣の骨',
     },
     standardValue: {
       sharp: 14,
@@ -597,9 +630,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Bone',
     type: 'Ivory',
+    suppressionValue: 20,
     name: {
       en: 'Ivory',
-      ja: '',
+      ja: '象牙',
     },
     standardValue: {
       sharp: 28,
@@ -615,9 +649,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Bone',
     type: 'CursedBone',
+    suppressionValue: 36,
     name: {
       en: 'CursedBone',
-      ja: '',
+      ja: '呪われた骨',
     },
     standardValue: {
       sharp: 43,
@@ -633,9 +668,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Bone',
     type: 'Fossil',
+    suppressionValue: 20,
     name: {
       en: 'Fossil',
-      ja: '',
+      ja: '化石',
     },
     standardValue: {
       sharp: 57,
@@ -652,9 +688,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Fabric',
     type: 'ToppleCotton',
+    suppressionValue: 10,
     name: {
       en: 'ToppleCotton',
-      ja: '',
+      ja: 'トップル木綿',
     },
     standardValue: {
       sharp: 18,
@@ -670,9 +707,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Fabric',
     type: "Sultan'sSilk",
+    suppressionValue: 10,
     name: {
       en: 'Sultan',
-      ja: '',
+      ja: 'サルタン絹布',
     },
     standardValue: {
       sharp: 28,
@@ -688,9 +726,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Fabric',
     type: 'JuddHemp',
+    suppressionValue: 10,
     name: {
       en: 'JuddHemp',
-      ja: '',
+      ja: 'ジャドヘンプ',
     },
     standardValue: {
       sharp: 38,
@@ -706,9 +745,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Fabric',
     type: 'AltenaFelt',
+    suppressionValue: 10,
     name: {
       en: 'AltenaFelt',
-      ja: '',
+      ja: 'アルテナフェルト',
     },
     standardValue: {
       sharp: 48,
@@ -725,9 +765,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Aerolite',
     type: 'JacobiniRock',
+    suppressionValue: 16,
     name: {
       en: 'JacobiniRock',
-      ja: '',
+      ja: 'ジャコビニ隕石',
     },
     standardValue: {
       sharp: 15,
@@ -743,9 +784,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Aerolite',
     type: 'HalleyRock',
+    suppressionValue: 16,
     name: {
       en: 'HalleyRock',
-      ja: '',
+      ja: 'ハレー隕石',
     },
     standardValue: {
       sharp: 20,
@@ -761,9 +803,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Aerolite',
     type: 'AnkhRock',
+    suppressionValue: 16,
     name: {
       en: 'AnkhRock',
-      ja: '',
+      ja: 'アンク隕石',
     },
     standardValue: {
       sharp: 25,
@@ -779,9 +822,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Aerolite',
     type: 'VinekRock',
+    suppressionValue: 16,
     name: {
       en: 'VinekRock',
-      ja: '',
+      ja: 'ヴィネック隕石',
     },
     standardValue: {
       sharp: 30,
@@ -797,9 +841,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Aerolite',
     type: 'TuttleRock',
+    suppressionValue: 16,
     name: {
       en: 'TuttleRock',
-      ja: '',
+      ja: 'タトル隕石',
     },
     standardValue: {
       sharp: 35,
@@ -815,9 +860,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Aerolite',
     type: 'NemesisRock',
+    suppressionValue: 16,
     name: {
       en: 'NemesisRock',
-      ja: '',
+      ja: 'ネメシス隕石',
     },
     standardValue: {
       sharp: 40,
@@ -833,9 +879,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Aerolite',
     type: 'BiellaRock',
+    suppressionValue: 16,
     name: {
       en: 'BiellaRock',
-      ja: '',
+      ja: 'ビエラ隕石',
     },
     standardValue: {
       sharp: 45,
@@ -851,9 +898,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Aerolite',
     type: 'SwifteRock',
+    suppressionValue: 16,
     name: {
       en: 'SwifteRock',
-      ja: '',
+      ja: 'スウィフト隕石',
     },
     standardValue: {
       sharp: 50,
@@ -870,9 +918,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Miscellaneous',
     type: 'Adamantite',
+    suppressionValue: 20,
     name: {
       en: 'Adamantite',
-      ja: '',
+      ja: 'アダマンタイト',
     },
     standardValue: {
       sharp: 62,
@@ -888,9 +937,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Miscellaneous',
     type: 'Fullmetal',
+    suppressionValue: 20,
     name: {
       en: 'Fullmetal',
-      ja: '',
+      ja: 'フルメタル',
     },
     standardValue: {
       sharp: 55,
@@ -906,9 +956,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Miscellaneous',
     type: 'Coral',
+    suppressionValue: 12,
     name: {
       en: 'Coral',
-      ja: '',
+      ja: 'サンゴ',
     },
     standardValue: {
       sharp: 18,
@@ -924,9 +975,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Miscellaneous',
     type: 'TortoiseShell',
+    suppressionValue: 20,
     name: {
       en: 'TortoiseShell',
-      ja: '',
+      ja: '甲羅',
     },
     standardValue: {
       sharp: 26,
@@ -942,9 +994,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Miscellaneous',
     type: 'Shell',
+    suppressionValue: 14,
     name: {
       en: 'Shell',
-      ja: '',
+      ja: '貝殻',
     },
     standardValue: {
       sharp: 20,
@@ -960,9 +1013,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Miscellaneous',
     type: 'Emerald',
+    suppressionValue: 8,
     name: {
       en: 'Emerald',
-      ja: '',
+      ja: 'エメラルド',
     },
     standardValue: {
       sharp: 2,
@@ -978,9 +1032,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Miscellaneous',
     type: 'Pearl',
+    suppressionValue: 8,
     name: {
       en: 'Pearl',
-      ja: '',
+      ja: 'パール',
     },
     standardValue: {
       sharp: 2,
@@ -996,9 +1051,10 @@ export const MainMaterialsMap: {
   {
     categoryType: 'Miscellaneous',
     type: 'LapisLazuli',
+    suppressionValue: 8,
     name: {
       en: 'LapisLazuli',
-      ja: '',
+      ja: 'ラピスラズリ',
     },
     standardValue: {
       sharp: 2,

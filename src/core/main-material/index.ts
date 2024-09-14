@@ -4,7 +4,7 @@ import { WeaponPerformanceStandardValueMap, WeaponType } from '../weapon';
 import { MainMaterialsMap } from './config';
 import { MainMaterialType } from './type';
 
-export function calcAttack(props: {
+export function getBaseAttackPower(props: {
   mainMaterialType: MainMaterialType;
   weaponType: WeaponType;
 }): number {
@@ -21,4 +21,20 @@ export function calcAttack(props: {
       weaponValue.tech * materialValue.tech) /
       128,
   );
+}
+
+export function getAttackPower(props: {
+  mainMaterialType: MainMaterialType;
+  weaponType: WeaponType;
+  totalElement: number;
+}): number {
+  const baseValue = getBaseAttackPower({
+    mainMaterialType: props.mainMaterialType,
+    weaponType: props.weaponType,
+  });
+  const suppressionValue = MainMaterialsMap.find(
+    (m) => m.type === props.mainMaterialType,
+  )?.suppressionValue;
+  if (!suppressionValue) throw new Error('Material not found');
+  return Math.floor((baseValue * (suppressionValue + props.totalElement)) / suppressionValue);
 }

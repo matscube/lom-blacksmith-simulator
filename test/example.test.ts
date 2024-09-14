@@ -12,7 +12,7 @@ describe('Weapon', () => {
 
     w.temper('Salamander Silver');
     expect(w.essence.salamander).toEqual(1);
-    // expect(w.getAttack()).toBe(52);
+    expect(w.getAttack()).toBe(52);
     // w.temper("Sulpher");
     // expect(w.essence.salamander).toEqual(2);
     // expect(w.getAttack()).toBe(55);

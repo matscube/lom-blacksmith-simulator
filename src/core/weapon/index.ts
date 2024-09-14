@@ -1,6 +1,6 @@
 import console from 'console';
 import { ElementType } from '../element';
-import { calcAttack, MainMaterialType } from '../main-material';
+import { getAttackPower, MainMaterialType } from '../main-material';
 import { MysticPowerType } from '../mystic-power';
 import { ElementResist, getElementResist, getEnergyForElementLevel } from '../resist';
 import { AllSubMaterials, SubMaterialType } from '../sub-material';
@@ -18,7 +18,12 @@ export class Weapon {
   }
 
   getAttack(): number {
-    return calcAttack({ mainMaterialType: this.mainMaterial, weaponType: this.weaponType });
+    const totalElement = Object.values(this.essence).reduce((acc, cur) => acc + cur, 0);
+    return getAttackPower({
+      mainMaterialType: this.mainMaterial,
+      weaponType: this.weaponType,
+      totalElement,
+    });
   }
 
   temper(type: SubMaterialType) {
