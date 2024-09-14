@@ -13,14 +13,14 @@ describe('Weapon', () => {
     w.temper('Salamander Silver');
     expect(w.element.essence.salamander).toEqual(1);
     expect(w.getAttack()).toBe(52);
-    expect(w.getMysticPowerBooked()).toEqual('Salamander');
-    expect(w.getMysticPower1()).toEqual(undefined);
+    expect(w.mysticPower.getBooked()).toEqual('Salamander');
+    expect(w.mysticPower.getPower1()).toEqual(undefined);
 
     w.temper('Sulphur');
     expect(w.element.essence.salamander).toEqual(2);
     expect(w.getAttack()).toBe(55);
-    expect(w.getMysticPowerBooked()).toEqual('Sorcerer');
-    expect(w.getMysticPower1()).toEqual('Salamander');
+    expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower1()).toEqual('Salamander');
 
     w.temper('Sulphur');
     // expect(w.essence.salamander).toEqual(3);

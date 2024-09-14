@@ -5,9 +5,9 @@ import {
   MainMaterial,
   MainMaterialType,
 } from '../main-material';
-import { MysticPowerType } from '../mystic-power';
 import { AllSubMaterials, SubMaterialType } from '../sub-material';
 import { WeaponElement } from './weapon-element';
+import { WeaponMysticPower } from './weapon-mystic-power';
 
 export * from './config';
 
@@ -38,6 +38,7 @@ export class Weapon {
   mainMaterial: MainMaterial;
   elementResist: ElementResist;
   element: WeaponElement = new WeaponElement();
+  mysticPower: WeaponMysticPower = new WeaponMysticPower();
   constructor(
     private readonly mainMaterialType: MainMaterialType,
     private readonly weaponType: WeaponType,
@@ -69,74 +70,14 @@ export class Weapon {
 
     // push mystic power
     if (subMaterial.mysticPowerType !== undefined) {
-      this.pushMysticPower(subMaterial.mysticPowerType);
+      this.mysticPower.push(subMaterial.mysticPowerType);
     }
 
     // book mystic-power element level-up
-    this.processActiveMysticPowers();
+    this.mysticPower.processActiveMysticPowers(this.element, this.elementResist);
 
     // process element level-up
     this.element.elementLevelUpProcess(this.elementResist);
-  }
-
-  /**
-   * Mystic Power
-   */
-  mysticPowers: MysticPowerType[] = []; // array of 5 items
-  hasMysticPower(mysticPower?: MysticPowerType) {
-    return mysticPower;
-  }
-  pushMysticPower(mysticPower: MysticPowerType) {
-    this.mysticPowers.unshift(mysticPower);
-    this.mysticPowers = this.mysticPowers.slice(0, 5);
-  }
-  getMysticPowerBooked() {
-    return this.mysticPowers[0];
-  }
-  getMysticPower1() {
-    return this.mysticPowers[1];
-  }
-  getMysticPower2() {
-    return this.mysticPowers[2];
-  }
-  getMysticPower3() {
-    return this.mysticPowers[3];
-  }
-  getMysticPowerPopped() {
-    return this.mysticPowers[4];
-  }
-  processActiveMysticPowers() {
-    this.processMysticPower(this.getMysticPower3());
-    this.processMysticPower(this.getMysticPower2());
-    this.processMysticPower(this.getMysticPower1());
-  }
-  processMysticPower(mysticPower?: MysticPowerType) {
-    if (mysticPower) {
-      if (mysticPower === 'Wisp') {
-        this.element.preProcessElementLevelUp(this.elementResist, 'wisp');
-      }
-      if (mysticPower === 'Shade') {
-        this.element.preProcessElementLevelUp(this.elementResist, 'shade');
-      }
-      if (mysticPower === 'Aura') {
-        this.element.preProcessElementLevelUp(this.elementResist, 'aura');
-      }
-      if (mysticPower === 'Dryad') {
-        this.element.preProcessElementLevelUp(this.elementResist, 'dryad');
-      }
-      if (mysticPower === 'Salamander') {
-        this.element.preProcessElementLevelUp(this.elementResist, 'salamander');
-      }
-      if (mysticPower === 'Gnome') {
-        this.element.preProcessElementLevelUp(this.elementResist, 'gnome');
-      }
-      if (mysticPower === 'Jinn') {
-        this.element.preProcessElementLevelUp(this.elementResist, 'jinn');
-      }
-      if (mysticPower === 'Undine') {
-        this.element.preProcessElementLevelUp(this.elementResist, 'undine');
-      }
-    }
   }
 
   /**
