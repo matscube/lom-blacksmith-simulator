@@ -1,8 +1,21 @@
 import { ElementType } from '../element';
 import { MultiLanguageText } from '../language';
 import { MysticPowerType } from '../mystic-power';
-import { SubMaterialType } from './items';
-export * from './items';
+import { BottleType, Bottles } from './items/bottles';
+import { CoinType, Coins } from './items/coin';
+import { EyeType, Eyes } from './items/eyes';
+import { FangOrClawType, FangsAndClaws } from './items/fangs-and-claws';
+import { FeatherType, Feathers } from './items/feathers';
+import { ManaCrystalType, ManaCrystals } from './items/mana-crystal';
+import { ManaStoneType, ManaStones } from './items/mana-stone';
+import { MeatType, Meats } from './items/meat';
+import { PelletType, Pellets } from './items/pellets';
+import { PouchType, Pouches } from './items/pouches';
+import { PowderType, Powders } from './items/powders';
+import { ProduceType, Produces } from './items/produce';
+import { SeedType, Seeds } from './items/seed';
+import { UrnType, Urns } from './items/urns';
+import { VialType, Vials } from './items/vials';
 
 const SubMaterialCategories = [
   { en: 'Coin', ja: 'コイン' },
@@ -23,6 +36,23 @@ const SubMaterialCategories = [
 ] as const;
 export type SubMaterialCategoryType = (typeof SubMaterialCategories)[number]['en'];
 
+export type SubMaterialType =
+  | CoinType
+  | ManaStoneType
+  | ManaCrystalType
+  | SeedType
+  | ProduceType
+  | MeatType
+  | FangOrClawType
+  | EyeType
+  | FeatherType
+  | BottleType
+  | VialType
+  | UrnType
+  | PelletType
+  | PowderType
+  | PouchType;
+
 export type SubMaterial = {
   categoryType: SubMaterialCategoryType;
   type: SubMaterialType;
@@ -31,3 +61,21 @@ export type SubMaterial = {
   elementType?: ElementType;
   mysticPowerType?: MysticPowerType;
 };
+
+export const AllSubMaterials: SubMaterial[] = [
+  ...Coins,
+  ...ManaStones,
+  ...ManaCrystals,
+  ...Seeds,
+  ...Produces,
+  ...Meats,
+  ...FangsAndClaws,
+  ...Eyes,
+  ...Feathers,
+  ...Bottles,
+  ...Vials,
+  ...Urns,
+  ...Pellets,
+  ...Powders,
+  ...Pouches,
+];
