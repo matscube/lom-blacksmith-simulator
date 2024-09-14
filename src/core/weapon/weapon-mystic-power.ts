@@ -4,26 +4,46 @@ import { WeaponElement } from './weapon-element';
 
 export class WeaponMysticPower {
   constructor() {}
+  cleanUp() {
+    // nothing
+  }
 
-  mysticPowers: MysticPowerType[] = []; // array of 5 items
+  mysticPowers: (MysticPowerType | undefined)[] = []; // array of 5 items
   push(mysticPower: MysticPowerType) {
     this.mysticPowers.unshift(mysticPower);
     this.mysticPowers = this.mysticPowers.slice(0, 5);
   }
+  // Booked
   getBooked() {
     return this.mysticPowers[0];
   }
+  // Power1
   getPower1() {
     return this.mysticPowers[1];
   }
+  // Power2
   getPower2() {
     return this.mysticPowers[2];
   }
+  removePower2() {
+    this.mysticPowers[2] = undefined;
+  }
+  // Power3
   getPower3() {
     return this.mysticPowers[3];
   }
+  removePower3() {
+    this.mysticPowers[3] = undefined;
+  }
+  // Popped
   getPopped() {
     return this.mysticPowers[4];
+  }
+  setPopped(mysticPower: MysticPowerType) {
+    this.mysticPowers[4] = mysticPower;
+  }
+  removePopped() {
+    this.mysticPowers[4] = undefined;
   }
   processActiveMysticPowers(weaponElement: WeaponElement, elementResist: ElementResist) {
     this.getPower3() && this.processMysticPower(weaponElement, elementResist, this.getPower3());
@@ -33,8 +53,11 @@ export class WeaponMysticPower {
   processMysticPower(
     weaponElement: WeaponElement,
     elementResist: ElementResist,
-    mysticPower: MysticPowerType,
+    mysticPower?: MysticPowerType,
   ) {
+    if (!mysticPower) return;
+
+    // Element
     if (mysticPower === 'Wisp') {
       weaponElement.preProcessElementLevelUp(elementResist, 'wisp');
     }
@@ -58,6 +81,13 @@ export class WeaponMysticPower {
     }
     if (mysticPower === 'Undine') {
       weaponElement.preProcessElementLevelUp(elementResist, 'undine');
+    }
+    // Element Resist
+    if (mysticPower === 'Sorcerer') {
+      elementResist.setMysticPowerSorcererBonus();
+    }
+    if (mysticPower === 'Witch') {
+      elementResist.setMysticPowerWitchBonus();
     }
   }
 }

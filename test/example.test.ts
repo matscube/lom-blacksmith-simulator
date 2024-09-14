@@ -7,27 +7,175 @@ describe('Weapon', () => {
     expect(w.getAttack()).toBe(50);
   });
 
-  it('can be tempered to salamander:9', () => {
+  it('can be tempered to be salamander:9', () => {
     const w = new Weapon('AltenaAlloy', 'Sword');
+    expect(w.elementResist.value['salamander']).toEqual(10);
 
     w.temper('Salamander Silver');
-    expect(w.element.essence.salamander).toEqual(1);
-    expect(w.getAttack()).toBe(52);
     expect(w.mysticPower.getBooked()).toEqual('Salamander');
     expect(w.mysticPower.getPower1()).toEqual(undefined);
+    expect(w.element.essence.salamander).toEqual(1);
+    expect(w.getAttack()).toBe(52);
 
     w.temper('Sulphur');
-    expect(w.element.essence.salamander).toEqual(2);
-    expect(w.getAttack()).toBe(55);
     expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
     expect(w.mysticPower.getPower1()).toEqual('Salamander');
+    expect(w.element.essence.salamander).toEqual(2);
+    expect(w.getAttack()).toBe(55);
 
     w.temper('Sulphur');
-    // expect(w.essence.salamander).toEqual(3);
-    // expect(w.getAttack()).toBe(58);
-    // w.temper("Sulpher");
-    // expect(w.essence.salamander).toEqual(4);
-    // expect(w.getAttack()).toBe(61);
+    expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower1()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower2()).toEqual('Salamander');
+    expect(w.element.essence.salamander).toEqual(3);
+    expect(w.getAttack()).toBe(58);
+
+    w.temper('Sulphur');
+    expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower1()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower2()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower3()).toEqual('Salamander');
+    expect(w.element.essence.salamander).toEqual(4);
+    expect(w.getAttack()).toBe(61);
+
+    w.temper('Salamander Silver');
+    expect(w.mysticPower.getBooked()).toEqual('Salamander');
+    expect(w.mysticPower.getPower1()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower2()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower3()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPopped()).toEqual('Salamander');
+    expect(w.element.essence.salamander).toEqual(5);
+    expect(w.getAttack()).toBe(63);
+
+    w.temper('Glow Crystal');
+    expect(w.mysticPower.getBooked()).toEqual('Nymph of Dawn');
+    expect(w.element.essence.salamander).toEqual(6);
+    expect(w.getAttack()).toBe(66);
+
+    w.temper('Glow Crystal');
+    expect(w.element.essence.salamander).toEqual(6);
+    expect(w.getAttack()).toBe(66);
+
+    w.temper('Glow Crystal');
+    expect(w.mysticPower.getBooked()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower1()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower2()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower3()).toEqual('Salamander');
+    expect(w.mysticPower.getPopped()).toEqual('Sorcerer');
+    expect(w.element.essence.salamander).toEqual(6);
+    expect(w.getAttack()).toBe(66);
+
+    w.temper('Sulphur');
+    expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower1()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower2()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower3()).toEqual(undefined);
+    expect(w.mysticPower.getPopped()).toEqual('Salamander');
+    expect(w.element.essence.salamander).toEqual(6);
+    expect(w.getAttack()).toBe(66);
+
+    w.temper('Sulphur');
+    expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower1()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower2()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower3()).toEqual(undefined);
+    expect(w.mysticPower.getPopped()).toEqual(undefined);
+    expect(w.element.essence.salamander).toEqual(6);
+    expect(w.getAttack()).toBe(66);
+
+    w.temper('Salamander Silver');
+    expect(w.element.essence.salamander).toEqual(6);
+    expect(w.getAttack()).toBe(66);
+
+    w.temper('Glow Crystal');
+    expect(w.element.essence.salamander).toEqual(7);
+    expect(w.getAttack()).toBe(69);
+
+    w.temper('Glow Crystal');
+    expect(w.element.essence.salamander).toEqual(7);
+    expect(w.getAttack()).toBe(69);
+
+    w.temper('Glow Crystal');
+    expect(w.element.essence.salamander).toEqual(7);
+    expect(w.getAttack()).toBe(69);
+
+    w.temper('Glow Crystal');
+    expect(w.element.essence.salamander).toEqual(7);
+    expect(w.getAttack()).toBe(69);
+
+    w.temper('Sulphur');
+    expect(w.element.essence.salamander).toEqual(7);
+    expect(w.getAttack()).toBe(69);
+
+    w.temper('Sulphur');
+    expect(w.element.essence.salamander).toEqual(7);
+    expect(w.getAttack()).toBe(69);
+
+    w.temper('Sulphur');
+    expect(w.element.essence.salamander).toEqual(7);
+    expect(w.getAttack()).toBe(69);
+
+    w.temper('Salamander Silver');
+    expect(w.element.essence.salamander).toEqual(8);
+    expect(w.getAttack()).toBe(72);
+
+    w.temper('Glow Crystal');
+    expect(w.element.essence.salamander).toEqual(8);
+    expect(w.getAttack()).toBe(72);
+
+    w.temper('Glow Crystal');
+    expect(w.element.essence.salamander).toEqual(8);
+    expect(w.getAttack()).toBe(72);
+
+    w.temper('Glow Crystal');
+    expect(w.element.essence.salamander).toEqual(8);
+    expect(w.getAttack()).toBe(72);
+
+    w.temper('Glow Crystal');
+    expect(w.mysticPower.getBooked()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower1()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower2()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower3()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPopped()).toEqual('Salamander');
+    expect(w.element.essence.salamander).toEqual(8);
+    expect(w.getAttack()).toBe(72);
+
+    w.temper('Sulphur');
+    expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower1()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower2()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower3()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPopped()).toEqual(undefined);
+    expect(w.element.essence.salamander).toEqual(8);
+    expect(w.getAttack()).toBe(72);
+
+    w.temper('Sulphur');
+    expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower1()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower2()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPower3()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPopped()).toEqual(undefined);
+    expect(w.element.essence.salamander).toEqual(8);
+    expect(w.getAttack()).toBe(72);
+
+    w.temper('Sulphur');
+    expect(w.mysticPower.getBooked()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower1()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower2()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower3()).toEqual('Nymph of Dawn');
+    expect(w.mysticPower.getPopped()).toEqual(undefined);
+    expect(w.element.essence.salamander).toEqual(8);
+    expect(w.getAttack()).toBe(72);
+
+    w.temper('Salamander Gold');
+    expect(w.mysticPower.getBooked()).toEqual('Salamander');
+    expect(w.mysticPower.getPower1()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower2()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPower3()).toEqual('Sorcerer');
+    expect(w.mysticPower.getPopped()).toEqual(undefined);
+    expect(w.elementResist.getEnergyForElementLevel('salamander', 9)).toEqual(256);
+    expect(w.element.essence.salamander).toEqual(9);
+    expect(w.getAttack()).toBe(75);
   });
 });
 

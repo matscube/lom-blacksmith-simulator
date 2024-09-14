@@ -14,18 +14,31 @@ export class WeaponElement {
     jinn: 0,
     undine: 0,
   };
+  cleanUp() {
+    this.resetEnergy();
+    this.elementLevelUpPossibilityReset();
+  }
+
   /**
    * Energy
    */
   energy: number = 0;
+  resetEnergy() {
+    this.energy = 0;
+  }
   poolEnergy(energy: number) {
-    this.energy = energy;
+    // console.log(`poolEnergy: ${energy}`);
+    this.energy += energy;
   }
   useEnergy(energy: number) {
+    // console.log(`useEnergy: ${energy}`);
     this.energy -= energy;
   }
 
   constructor() {}
+  /**
+   * Preprocess and level-up for wisp/shade
+   */
   preProcessElementLevelUp(resist: ElementResist, elementType: ElementType) {
     switch (elementType) {
       case 'wisp':
@@ -45,11 +58,29 @@ export class WeaponElement {
         break;
     }
   }
+  /**
+   * Possibility count
+   */
   elementLevelUpPossibilityCountUp(type?: ElementType) {
     if (type) {
       this.elementLevelUpPossibilityCount[type]++;
     }
   }
+  elementLevelUpPossibilityReset() {
+    this.elementLevelUpPossibilityCount = {
+      wisp: 0,
+      shade: 0,
+      dryad: 0,
+      aura: 0,
+      salamander: 0,
+      gnome: 0,
+      jinn: 0,
+      undine: 0,
+    };
+  }
+  /**
+   * Levelup Process
+   */
   elementLevelUpProcess(resist: ElementResist) {
     // 光と闇は専用フローになる
     const elementTypesOrderedForProcessing: ElementType[] = [
@@ -78,17 +109,5 @@ export class WeaponElement {
     } else {
       return false;
     }
-  }
-  elementLevelUpPossibilityReset() {
-    this.elementLevelUpPossibilityCount = {
-      wisp: 0,
-      shade: 0,
-      dryad: 0,
-      aura: 0,
-      salamander: 0,
-      gnome: 0,
-      jinn: 0,
-      undine: 0,
-    };
   }
 }

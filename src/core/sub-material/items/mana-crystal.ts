@@ -24,7 +24,7 @@ export const ManaCrystals: SubMaterial[] = [
     name: { en: 'Glow Crystal', ja: '輝きのクリスタル' },
     energy: 96,
     elementType: 'salamander',
-    mysticPowerType: undefined, // 暁の娘
+    mysticPowerType: 'Nymph of Dawn', // 暁の娘
   },
   {
     categoryType: 'Mana Crystal',

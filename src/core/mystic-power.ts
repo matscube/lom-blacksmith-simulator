@@ -88,3 +88,5 @@ export type MysticPowerType =
   | 'Princess' // 王女様
   | 'Clown' // 道化師
   | 'Cleric'; // 僧侶
+
+export const NYMPH_OF_DAWN_ENERGY = 192;
