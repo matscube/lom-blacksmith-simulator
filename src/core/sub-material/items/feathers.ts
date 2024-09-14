@@ -13,7 +13,7 @@ export const Feathers: SubMaterial[] = [
     type: 'Angel Feather',
     name: { en: 'Angel Feather', ja: '天使のはね' },
     energy: 32,
-    elementType: undefined,
+    elementType: 'wisp',
     mysticPowerType: undefined, // Fallen Angel (Wisp > 4, Shade = 0)
   },
   {
@@ -21,7 +21,7 @@ export const Feathers: SubMaterial[] = [
     type: 'Raven Feather',
     name: { en: 'Raven Feather', ja: '漆黒のはね' },
     energy: 24,
-    elementType: undefined,
+    elementType: 'shade',
     mysticPowerType: undefined, // Raven
   },
   {

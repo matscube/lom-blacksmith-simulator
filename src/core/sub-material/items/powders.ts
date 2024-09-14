@@ -15,7 +15,7 @@ export const Powders: SubMaterial[] = [
     name: { en: 'Sulphur', ja: 'イオウ' },
     energy: 24,
     elementType: undefined,
-    mysticPowerType: undefined, // Sorceror
+    mysticPowerType: 'Sorcerer',
   },
   {
     categoryType: 'Pellets',
