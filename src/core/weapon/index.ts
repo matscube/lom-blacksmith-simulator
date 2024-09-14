@@ -1,6 +1,11 @@
 import console from 'console';
 import { ElementType } from '../element';
-import { getAttackPower, MainMaterialType } from '../main-material';
+import {
+  getAttackPower,
+  getMainMaterialByType,
+  MainMaterial,
+  MainMaterialType,
+} from '../main-material';
 import { MysticPowerType } from '../mystic-power';
 import { ElementResist, getElementResist, getEnergyForElementLevel } from '../resist';
 import { AllSubMaterials, SubMaterialType } from '../sub-material';
@@ -10,17 +15,19 @@ export * from './config';
 export * from './type';
 
 export class Weapon {
+  mainMaterial: MainMaterial;
   constructor(
-    private readonly mainMaterial: MainMaterialType,
+    private readonly mainMaterialType: MainMaterialType,
     private readonly weaponType: WeaponType,
   ) {
-    console.log('Weapon created');
+    this.mainMaterial = getMainMaterialByType(mainMaterialType);
+    this.resist = getElementResist(mainMaterialType);
   }
 
   getAttack(): number {
     const totalElement = Object.values(this.essence).reduce((acc, cur) => acc + cur, 0);
     return getAttackPower({
-      mainMaterialType: this.mainMaterial,
+      mainMaterialType: this.mainMaterialType,
       weaponType: this.weaponType,
       totalElement,
     });
@@ -124,8 +131,7 @@ export class Weapon {
   /**
    * Element Level Up
    */
-  // TODO: change by main material
-  resist: ElementResist = getElementResist('MenosBronze');
+  resist: ElementResist;
   essence: Essence = new Essence();
   elementLevelUpPossibilityCount: { [key in ElementType]: number } = {
     wisp: 0,

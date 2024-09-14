@@ -1,13 +1,5 @@
-import { describe, expect, it, test } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { getBaseAttackPower } from '.';
-
-export function sum(a: number, b: number) {
-  return a + b;
-}
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
 
 describe('getBaseAttackPower', () => {
   it('for all weapons with MenosBronze', () => {
