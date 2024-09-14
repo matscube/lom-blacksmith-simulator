@@ -26,40 +26,38 @@ export class WeaponMysticPower {
     return this.mysticPowers[4];
   }
   processActiveMysticPowers(weaponElement: WeaponElement, elementResist: ElementResist) {
-    this.processMysticPower(weaponElement, elementResist, this.getPower3());
-    this.processMysticPower(weaponElement, elementResist, this.getPower2());
-    this.processMysticPower(weaponElement, elementResist, this.getPower1());
+    this.getPower3() && this.processMysticPower(weaponElement, elementResist, this.getPower3());
+    this.getPower2() && this.processMysticPower(weaponElement, elementResist, this.getPower2());
+    this.getPower1() && this.processMysticPower(weaponElement, elementResist, this.getPower1());
   }
   processMysticPower(
     weaponElement: WeaponElement,
     elementResist: ElementResist,
-    mysticPower?: MysticPowerType,
+    mysticPower: MysticPowerType,
   ) {
-    if (mysticPower) {
-      if (mysticPower === 'Wisp') {
-        weaponElement.preProcessElementLevelUp(elementResist, 'wisp');
-      }
-      if (mysticPower === 'Shade') {
-        weaponElement.preProcessElementLevelUp(elementResist, 'shade');
-      }
-      if (mysticPower === 'Aura') {
-        weaponElement.preProcessElementLevelUp(elementResist, 'aura');
-      }
-      if (mysticPower === 'Dryad') {
-        weaponElement.preProcessElementLevelUp(elementResist, 'dryad');
-      }
-      if (mysticPower === 'Salamander') {
-        weaponElement.preProcessElementLevelUp(elementResist, 'salamander');
-      }
-      if (mysticPower === 'Gnome') {
-        weaponElement.preProcessElementLevelUp(elementResist, 'gnome');
-      }
-      if (mysticPower === 'Jinn') {
-        weaponElement.preProcessElementLevelUp(elementResist, 'jinn');
-      }
-      if (mysticPower === 'Undine') {
-        weaponElement.preProcessElementLevelUp(elementResist, 'undine');
-      }
+    if (mysticPower === 'Wisp') {
+      weaponElement.preProcessElementLevelUp(elementResist, 'wisp');
+    }
+    if (mysticPower === 'Shade') {
+      weaponElement.preProcessElementLevelUp(elementResist, 'shade');
+    }
+    if (mysticPower === 'Aura') {
+      weaponElement.preProcessElementLevelUp(elementResist, 'aura');
+    }
+    if (mysticPower === 'Dryad') {
+      weaponElement.preProcessElementLevelUp(elementResist, 'dryad');
+    }
+    if (mysticPower === 'Salamander') {
+      weaponElement.preProcessElementLevelUp(elementResist, 'salamander');
+    }
+    if (mysticPower === 'Gnome') {
+      weaponElement.preProcessElementLevelUp(elementResist, 'gnome');
+    }
+    if (mysticPower === 'Jinn') {
+      weaponElement.preProcessElementLevelUp(elementResist, 'jinn');
+    }
+    if (mysticPower === 'Undine') {
+      weaponElement.preProcessElementLevelUp(elementResist, 'undine');
     }
   }
 }
