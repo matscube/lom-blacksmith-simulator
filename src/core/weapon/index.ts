@@ -7,7 +7,7 @@ import {
   MainMaterialType,
 } from '../main-material';
 import { MysticPowerType } from '../mystic-power';
-import { ElementResist, getElementResist, getEnergyForElementLevel } from '../resist';
+import { ElementResist } from '../resist';
 import { AllSubMaterials, SubMaterialType } from '../sub-material';
 import { WeaponType } from './type';
 
@@ -16,12 +16,13 @@ export * from './type';
 
 export class Weapon {
   mainMaterial: MainMaterial;
+  elementResist: ElementResist;
   constructor(
     private readonly mainMaterialType: MainMaterialType,
     private readonly weaponType: WeaponType,
   ) {
     this.mainMaterial = getMainMaterialByType(mainMaterialType);
-    this.resist = getElementResist(mainMaterialType);
+    this.elementResist = new ElementResist(mainMaterialType);
   }
 
   getAttack(): number {
@@ -131,7 +132,6 @@ export class Weapon {
   /**
    * Element Level Up
    */
-  resist: ElementResist;
   essence: Essence = new Essence();
   elementLevelUpPossibilityCount: { [key in ElementType]: number } = {
     wisp: 0,
@@ -190,7 +190,7 @@ export class Weapon {
   }
   levelUpElementIfPossible(element: ElementType): boolean {
     const currentLevel = this.essence[element];
-    const nextLevelEnergy = getEnergyForElementLevel(this.resist[element], currentLevel + 1);
+    const nextLevelEnergy = this.elementResist.getEnergyForElementLevel(element, currentLevel + 1);
     if (this.energy >= nextLevelEnergy) {
       this.useEnergy(nextLevelEnergy);
       this.essence[element]++;
