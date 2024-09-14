@@ -1,5 +1,6 @@
 import console from 'console';
 import { ElementType } from '../element';
+import { ElementResist } from '../element-resist';
 import {
   getAttackPower,
   getMainMaterialByType,
@@ -7,12 +8,32 @@ import {
   MainMaterialType,
 } from '../main-material';
 import { MysticPowerType } from '../mystic-power';
-import { ElementResist } from '../resist';
 import { AllSubMaterials, SubMaterialType } from '../sub-material';
-import { WeaponType } from './type';
 
 export * from './config';
-export * from './type';
+
+export const WeaponTypes = [
+  'Knife',
+  'Sword',
+  'Axe',
+  '2H-Sword',
+  '2H-Axe',
+  'Hammer',
+  'Spear',
+  'Staff',
+  'Glove',
+  'Flail',
+  'Bow',
+] as const;
+
+export type WeaponType = (typeof WeaponTypes)[number];
+
+export type WeaponPerformanceStandardValue = {
+  sharp: number; // A
+  heavy: number; // B
+  force: number; // C
+  tech: number; // D
+};
 
 export class Weapon {
   mainMaterial: MainMaterial;
