@@ -1,4 +1,4 @@
-import { SubMaterial } from '../type';
+import { SubMaterial } from '..';
 
 export const Coins: SubMaterial[] = [
   // Gold Coin

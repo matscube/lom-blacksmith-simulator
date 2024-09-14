@@ -3,8 +3,7 @@ import { ElementType } from '../element';
 import { calcAttack, MainMaterialType } from '../main-material';
 import { MysticPowerType } from '../mystic-power';
 import { ElementResist, getElementResist, getEnergyForElementLevel } from '../resist';
-import { AllSubMaterials } from '../sub-material/config';
-import { SubMaterialType } from '../sub-material/type';
+import { AllSubMaterials, SubMaterialType } from '../sub-material';
 import { WeaponType } from './type';
 
 export * from './config';
