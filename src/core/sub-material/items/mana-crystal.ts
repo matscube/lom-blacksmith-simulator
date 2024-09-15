@@ -32,6 +32,6 @@ export const ManaCrystals: SubMaterial[] = [
     name: { en: 'Chaos Crystal', ja: 'カオスのクリスタル' },
     energy: 24,
     elementType: undefined,
-    mysticPowerType: undefined, // 太古の月
+    mysticPowerType: 'Ancient Moon (World Card)', // 太古の月
   },
 ];
