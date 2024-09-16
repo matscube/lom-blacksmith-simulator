@@ -45,6 +45,10 @@ export class WeaponMysticPower {
   removePopped() {
     this.mysticPowers[4] = undefined;
   }
+  /**
+   * TODO: debug用に破棄欄を追加する（暁の娘の処理把握のために）
+   * temper処理の最後に欄外と破棄欄をクリア処理する
+   */
   processActiveMysticPowers(weaponElement: WeaponElement, elementResist: ElementResist) {
     this.getPower3() && this.processMysticPower(weaponElement, elementResist, this.getPower3());
     this.getPower2() && this.processMysticPower(weaponElement, elementResist, this.getPower2());
