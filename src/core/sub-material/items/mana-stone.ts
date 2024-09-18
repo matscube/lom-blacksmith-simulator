@@ -5,15 +5,15 @@ export const ManaStones: SubMaterial[] = [
   {
     categoryType: 'Mana Stone',
     type: 'Fire Stone',
-    name: { en: '', ja: '' },
+    name: { en: 'Fire Stone', ja: '火のマナストーン' },
     energy: 24,
     elementType: 'salamander',
-    mysticPowerType: 'Undine',
+    mysticPowerType: 'Salamander',
   },
   {
     categoryType: 'Mana Stone',
     type: 'Earth Stone',
-    name: { en: '', ja: '' },
+    name: { en: 'Earth Stone', ja: '土のマナストーン' },
     energy: 24,
     elementType: 'gnome',
     mysticPowerType: 'Gnome',
@@ -21,7 +21,7 @@ export const ManaStones: SubMaterial[] = [
   {
     categoryType: 'Mana Stone',
     type: 'Wind Stone',
-    name: { en: '', ja: '' },
+    name: { en: 'Wind Stone', ja: '風のマナストーン' },
     energy: 24,
     elementType: 'jinn',
     mysticPowerType: 'Jinn',
@@ -29,7 +29,7 @@ export const ManaStones: SubMaterial[] = [
   {
     categoryType: 'Mana Stone',
     type: 'Water Stone',
-    name: { en: '', ja: '' },
+    name: { en: 'Water Stone', ja: '水のマナストーン' },
     energy: 24,
     elementType: 'undine',
     mysticPowerType: 'Undine',

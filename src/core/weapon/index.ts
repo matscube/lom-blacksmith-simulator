@@ -67,6 +67,9 @@ export class Weapon {
     const subMaterial = AllSubMaterials.find((m) => m.type === type);
     if (!subMaterial) throw new Error('SubMaterial not found');
 
+    // check lock
+    this.element.lockElementLevelUp();
+
     // pool sub material energy
     this.element.poolEnergy(subMaterial.energy);
     if (subMaterial.elementType !== undefined) {

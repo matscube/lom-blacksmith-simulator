@@ -32,25 +32,9 @@ export class ElementResist {
     return this.value[elementType];
   }
   getEnergyForElementLevel(elementType: ElementType, level: number): number {
-    let resistValue = this.getResistValue(elementType);
-    let bonus = 0;
-    switch (elementType) {
-      case 'wisp':
-      case 'dryad':
-      case 'salamander':
-      case 'gnome': {
-        bonus = this.mysticPowerSorcererBonus;
-        break;
-      }
+    if (level === 0) return 0;
 
-      case 'shade':
-      case 'aura':
-      case 'jinn':
-      case 'undine': {
-        bonus = this.mysticPowerWitchBonus;
-        break;
-      }
-    }
+    let resistValue = this.getResistValue(elementType);
     if (resistValue <= 7) {
       if (this.mysticPowerSorcererBonus === 1) {
         resistValue = 3;

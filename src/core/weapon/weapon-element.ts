@@ -14,8 +14,19 @@ export class WeaponElement {
     jinn: 0,
     undine: 0,
   };
+  elementLevelUpLocked: { [key in ElementType]: boolean } = {
+    wisp: false,
+    shade: false,
+    dryad: false,
+    aura: false,
+    salamander: false,
+    gnome: false,
+    jinn: false,
+    undine: false,
+  };
   cleanUp() {
     this.resetEnergy();
+    this.elementLevelUpLockedReset();
     this.elementLevelUpPossibilityReset();
   }
 
@@ -54,16 +65,73 @@ export class WeaponElement {
       case 'jinn':
       case 'undine':
         // book sub-material element level-up
-        this.elementLevelUpPossibilityCountUp(elementType);
+        this.elementLevelUpPossibilityCountUp(resist, elementType);
         break;
     }
   }
   /**
-   * Possibility count
+   * Lock
    */
-  elementLevelUpPossibilityCountUp(type?: ElementType) {
-    if (type) {
-      this.elementLevelUpPossibilityCount[type]++;
+  lockElementLevelUp() {
+    if (this.essence.salamander > 0) {
+      this.elementLevelUpLocked.gnome = true;
+    }
+    if (this.essence.gnome > 0) {
+      this.elementLevelUpLocked.jinn = true;
+    }
+    if (this.essence.jinn > 0) {
+      this.elementLevelUpLocked.undine = true;
+    }
+    if (this.essence.undine > 0) {
+      this.elementLevelUpLocked.salamander = true;
+    }
+  }
+  elementLevelUpLockedReset() {
+    this.elementLevelUpLocked = {
+      wisp: false,
+      shade: false,
+      dryad: false,
+      aura: false,
+      salamander: false,
+      gnome: false,
+      jinn: false,
+      undine: false,
+    };
+  }
+  /**
+   * Possibility count
+   *
+   * レベルアップ判定の予約をする
+   * 強属性レベルアップ判定予約で、弱属性は即座にレベルダウンする
+   * レベルダウンによる差分のエネルギーをプールする
+   * レベルダウンで0になった場合は即座にロックを解除する
+   */
+  elementLevelUpPossibilityCountUp(resist: ElementResist, type?: ElementType) {
+    if (!type) return;
+    if (this.elementLevelUpLocked[type]) return;
+    this.elementLevelUpPossibilityCount[type]++;
+
+    switch (type) {
+      case 'salamander':
+        this.poolEnergy(resist.getEnergyForElementLevel('gnome', this.essence.gnome));
+        this.essence.gnome = Math.max(this.essence.gnome - 1, 0);
+        if (this.essence.gnome === 0) this.elementLevelUpLocked.jinn = false;
+        break;
+      case 'gnome':
+        this.poolEnergy(resist.getEnergyForElementLevel('jinn', this.essence.jinn));
+        this.essence.jinn = Math.max(this.essence.jinn - 1, 0);
+        if (this.essence.jinn === 0) this.elementLevelUpLocked.gnome = false;
+        break;
+      case 'jinn':
+        this.poolEnergy(resist.getEnergyForElementLevel('undine', this.essence.undine));
+        this.essence.undine = Math.max(this.essence.undine - 1, 0);
+        if (this.essence.undine === 0) this.elementLevelUpLocked.jinn = false;
+        break;
+      case 'undine':
+        this.poolEnergy(resist.getEnergyForElementLevel('salamander', this.essence.salamander));
+        this.essence.salamander = Math.max(this.essence.salamander - 1, 0);
+        if (this.essence.salamander === 0) this.elementLevelUpLocked.gnome = false;
+        break;
     }
   }
   elementLevelUpPossibilityReset() {
