@@ -6,7 +6,7 @@ import { Weapon } from '../src/core/weapon/index';
  *
  * 火 > 土 > 風 > 水 > 火
  */
-describe('Weapon', () => {
+describe('下段属性のロック', () => {
   it('火が1以上あると土はあがらない', () => {
     const w = new Weapon('MenosBronze', 'Knife');
     w.temper('Fire Stone');
