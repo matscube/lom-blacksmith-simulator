@@ -58,7 +58,6 @@ export class Weapon {
   }
 
   temper(type: SubMaterialType) {
-    // console.log('[temper start]');
     this.history.push(type);
     this.elementResist.cleanUp();
     this.element.cleanUp();

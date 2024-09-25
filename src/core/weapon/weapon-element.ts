@@ -48,16 +48,18 @@ export class WeaponElement {
 
   constructor() {}
   /**
-   * Preprocess and level-up for wisp/shade
+   * Preprocess 6 elements
+   * level-up for wisp/shade element
    */
   preProcessElementLevelUp(resist: ElementResist, elementType: ElementType) {
     switch (elementType) {
       case 'wisp':
       case 'shade':
-        this.levelUpElementIfPossible(resist, elementType);
+        this.elementLevelUpForWispShade(resist, elementType);
         break;
       case 'aura':
       case 'dryad':
+        if (this.elementLevelUpLocked[elementType]) return;
         this.levelUpElementIfPossible(resist, elementType);
         break;
       case 'salamander':
@@ -73,6 +75,9 @@ export class WeaponElement {
    * Lock
    */
   lockElementLevelUp() {
+    // 上段属性の強弱判定は属性処理で逐次チェックされるので、下段属性のように事前処理できない
+
+    // 下段属性
     if (this.essence.salamander > 0) {
       this.elementLevelUpLocked.gnome = true;
     }
@@ -97,6 +102,40 @@ export class WeaponElement {
       jinn: false,
       undine: false,
     };
+  }
+  elementLevelUpForWispShade(resist: ElementResist, type: Extract<ElementType, 'wisp' | 'shade'>) {
+    // todo: check chaos mystic power
+
+    if (this.essence.wisp > this.essence.shade) {
+      // get all level-up energy from shade
+      while (this.essence.shade > 0) {
+        this.poolEnergy(resist.getEnergyForElementLevel('shade', this.essence.shade));
+        this.essence.shade = Math.max(this.essence.shade - 1, 0);
+      }
+    }
+
+    // check which element should be leveled up
+    switch (type) {
+      case 'wisp':
+        this.levelUpElementIfPossible(resist, 'wisp');
+        // 光上昇後の闇の低下処理と吸収処理はblackstraycatチャートにはないが、これがないと実機と合わないので必要なはず
+        if (this.essence.wisp > this.essence.shade) {
+          // get all level-up energy from shade
+          while (this.essence.shade > 0) {
+            this.poolEnergy(resist.getEnergyForElementLevel('shade', this.essence.shade));
+            this.essence.shade = Math.max(this.essence.shade - 1, 0);
+          }
+        }
+        break;
+      case 'shade':
+        if (this.essence.wisp === 0) {
+          this.levelUpElementIfPossible(resist, 'shade');
+        } else {
+          // skip
+          // todo: 欄外の暁の娘を破棄する
+        }
+        break;
+    }
   }
   /**
    * Possibility count

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { Weapon } from '../src/core/weapon/index';
 
 /**
- * 属性ロックとカオス強化
+ * 下段属性ロックとカオス強化
  *
  * 火 > 土 > 風 > 水 > 火
  */
@@ -145,4 +145,50 @@ describe('下段属性のロック', () => {
     expect(w.element.essence.gnome).toEqual(1);
     expect(w.element.essence.undine).toEqual(2);
   });
+});
+
+/**
+ * 上段属性ロックとカオス強化
+ *
+ * 光 > 闇
+ * 木 > 金
+ */
+describe('上段属性のロック', () => {
+  it('光が1以上あると闇はあがらない', () => {
+    const w = new Weapon('MenosBronze', 'Knife');
+    w.temper('Wisp Silver');
+    expect(w.mysticPower.getBooked()).toEqual('Wisp');
+    expect(w.element.essence.wisp).toEqual(1);
+    w.temper('Shade Silver');
+    expect(w.mysticPower.getBooked()).toEqual('Shade');
+    expect(w.mysticPower.getPower1()).toEqual('Wisp');
+    expect(w.element.essence.wisp).toEqual(2);
+    expect(w.element.essence.shade).toEqual(0);
+  });
+  it('光が0なら闇をあげられる', () => {
+    const w = new Weapon('MenosBronze', 'Knife');
+    expect(w.element.essence.wisp).toEqual(0);
+    w.temper('Shade Silver');
+    expect(w.element.essence.wisp).toEqual(0);
+    expect(w.element.essence.shade).toEqual(1);
+  });
+  it('光 <= 闇なら闇をあげられる', () => {
+    // 実機検証済み
+    const w = new Weapon('MenosBronze', 'Knife');
+    w.temper('Shade Silver');
+    expect(w.element.essence.wisp).toEqual(0);
+    expect(w.element.essence.shade).toEqual(1);
+    w.temper('Wisp Silver');
+    expect(w.mysticPower.getBooked()).toEqual('Wisp');
+    expect(w.mysticPower.getPower1()).toEqual('Shade');
+    expect(w.element.essence.wisp).toEqual(1);
+    expect(w.element.essence.shade).toEqual(1);
+    w.temper('Shade Silver');
+    expect(w.mysticPower.getBooked()).toEqual('Shade');
+    expect(w.mysticPower.getPower1()).toEqual('Wisp');
+    expect(w.mysticPower.getPower2()).toEqual('Shade');
+    expect(w.element.essence.wisp).toEqual(2);
+    expect(w.element.essence.shade).toEqual(0);
+  });
+  it('光 > 闇のときに光の属性上昇判定処理をすると闇は0になる', () => {});
 });
